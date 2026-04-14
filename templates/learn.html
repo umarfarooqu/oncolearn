@@ -1,0 +1,2817 @@
+{% extends "base.html" %}
+{% block title %}Breast Cancer Education – OncoLearn{% endblock %}
+
+{% block content %}
+
+<!-- ═══ LEARN HERO SECTION ═══ -->
+<section class="hero">
+  <!-- Enhanced Medical Imagery Background -->
+  <div class="hero-medical-bg">
+    <!-- DNA Helix Animation -->
+    <div class="medical-illustration illustration-dna">
+      <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="dnaGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0.6" />
+          </linearGradient>
+        </defs>
+        <!-- DNA Double Helix -->
+        <path d="M50,50 Q100,30 150,50 Q100,70 50,50" stroke="url(#dnaGrad2)" stroke-width="3" fill="none" opacity="0.7">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <path d="M50,70 Q100,50 150,70 Q100,90 50,70" stroke="url(#dnaGrad2)" stroke-width="3" fill="none" opacity="0.7">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <!-- Base pairs -->
+        <line x1="70" y1="50" x2="70" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="50" x2="100" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <line x1="130" y1="50" x2="130" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <text x="100" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FF69B4" opacity="0.8">DNA</text>
+      </svg>
+    </div>
+
+    <!-- Breast Cancer Ribbon -->
+    <div class="medical-illustration illustration-ribbon">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ribbonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFB6C1"/>
+            <stop offset="50%" style="stop-color:#FF69B4"/>
+            <stop offset="100%" style="stop-color:#FF1493"/>
+          </linearGradient>
+        </defs>
+        <!-- Ribbon loops -->
+        <path d="M60,100 Q100,60 140,100 Q100,140 60,100" fill="url(#ribbonGrad2)" opacity="0.8">
+          <animateTransform attributeName="transform" type="rotate" values="0 100 100;5 100 100;-5 100 100;0 100 100" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M80,100 Q100,80 120,100 Q100,120 80,100" fill="#FFC0CB" opacity="0.6"/>
+        <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#8B1538" opacity="0.9">LEARN</text>
+      </svg>
+    </div>
+
+    <!-- Microscope Icon -->
+    <div class="medical-illustration illustration-microscope">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="microscopeGrad2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#87CEEB"/>
+            <stop offset="100%" style="stop-color:#4682B4"/>
+          </radialGradient>
+        </defs>
+        <!-- Microscope base -->
+        <rect x="70" y="150" width="60" height="20" rx="5" fill="url(#microscopeGrad2)" opacity="0.7"/>
+        <!-- Microscope arm -->
+        <rect x="95" y="80" width="10" height="70" fill="#4682B4" opacity="0.8"/>
+        <!-- Lens -->
+        <circle cx="100" cy="70" r="25" fill="#E0F6FF" stroke="#4682B4" stroke-width="3" opacity="0.8">
+          <animate attributeName="r" values="25;28;25" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="70" r="15" fill="#87CEEB" opacity="0.6"/>
+        <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#4682B4" opacity="0.8">EXPLORE</text>
+      </svg>
+    </div>
+
+    <!-- Cancer Cell Animation -->
+    <div class="medical-illustration illustration-cell">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="cellGrad2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#FF6B9D"/>
+            <stop offset="100%" style="stop-color:#C44569"/>
+          </radialGradient>
+        </defs>
+        <!-- Cell membrane -->
+        <circle cx="100" cy="100" r="40" fill="none" stroke="url(#cellGrad2)" stroke-width="4" opacity="0.7">
+          <animate attributeName="stroke-dasharray" values="0,251;125,126;251,0" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Nucleus -->
+        <circle cx="100" cy="100" r="15" fill="#FF1493" opacity="0.6">
+          <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <!-- DNA strands inside -->
+        <path d="M85,95 Q100,90 115,95" stroke="#FFB6C1" stroke-width="1" opacity="0.5"/>
+        <path d="M85,105 Q100,110 115,105" stroke="#FFB6C1" stroke-width="1" opacity="0.5"/>
+        <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#C44569" opacity="0.8">UNDERSTAND</text>
+      </svg>
+    </div>
+
+    <!-- Medical Cross -->
+    <div class="medical-illustration illustration-cross">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="crossGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#32CD32"/>
+            <stop offset="100%" style="stop-color:#228B22"/>
+          </linearGradient>
+        </defs>
+        <!-- Cross vertical -->
+        <rect x="95" y="70" width="10" height="60" fill="url(#crossGrad2)" opacity="0.8" rx="2"/>
+        <!-- Cross horizontal -->
+        <rect x="80" y="95" width="40" height="10" fill="url(#crossGrad2)" opacity="0.8" rx="2"/>
+        <!-- Pulse animation -->
+        <circle cx="100" cy="100" r="30" fill="none" stroke="#32CD32" stroke-width="2" opacity="0.3">
+          <animate attributeName="r" values="30;40;30" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#228B22" opacity="0.8">CARE</text>
+      </svg>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <svg class="tag-icon" style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; animation: bounce 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v1A2.5 2.5 0 0 1 18 23H6.5a2.5 2.5 0 0 1-2.5-2.5v-1z"/><path d="M6.5 13H18V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v7z"/></svg>
+      BREAST CANCER EDUCATION
+      <span class="tag-pulse"></span>
+    </div>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+      Comprehensive<br>
+      <span>Breast Cancer Education & Insights</span>
+    </h1>
+    <p style="font-size: 1.15rem; max-width: 580px; color: #1a1a1a;">
+      Evidence-based information about breast cancer prevention, detection, treatment, and survivorship.
+      All content is sourced from reputable medical organizations and peer-reviewed research.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ LEARNING CONTENT SECTION ═══ -->
+<div style="padding-top: 40px; padding-bottom: 80px; background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); width: 100%; position: relative; min-height: 100vh;">
+  
+  <!-- Enhanced Medical Imagery Background -->
+  <div style="position: absolute; top: 5%; right: 3%; width: 150px; height: 150px; opacity: 0.4; animation: float-dna 18s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cellsGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#0066cc;stop-opacity:0.6"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="url(#cellsGrad3)" stroke-width="3"/>
+      <circle cx="100" cy="100" r="35" fill="none" stroke="url(#cellsGrad3)" stroke-width="2"/>
+      <circle cx="100" cy="100" r="20" fill="url(#cellsGrad3)" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ SIDEBAR + CONTENT LAYOUT ═══ -->
+  <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 40px; padding: 0 24px; position: relative; z-index: 2;">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="learn-sidebar" style="background: white; border-radius: 16px; padding: 28px 0; height: fit-content; position: sticky; top: 100px; box-shadow: 0 4px 16px rgba(0,102,204,0.08); border: 1px solid rgba(0,102,204,0.1);">
+      <div style="padding: 0 20px; margin-bottom: 24px;">
+        <div style="display: inline-block; background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,128,255,0.1)); padding: 6px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; color: #0066cc; letter-spacing: 0.5px;">
+          <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: middle; animation: bounce 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v1A2.5 2.5 0 0 1 18 23H6.5a2.5 2.5 0 0 1-2.5-2.5v-1z"/><path d="M6.5 13H18V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v7z"/></svg>TOPICS
+        </div>
+        <h3 style="font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 12px 0 0 0; letter-spacing: -0.3px;">Learn About Breast Cancer</h3>
+        <p style="font-size: 0.9rem; color: #666; margin: 8px 0 0 0; line-height: 1.5;">Explore comprehensive topics on prevention, detection, and treatment.</p>
+      </div>
+
+      <div style="border-top: 1px solid rgba(0,102,204,0.1);"></div>
+
+      <nav class="learn-nav" style="display: flex; flex-direction: column;">
+        <button class="learn-nav-item active" onclick="switchLearnTab(event, 'overview')" style="padding: 14px 20px; background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, rgba(0,128,255,0.05) 100%); border: none; border-left: 3px solid #0066cc; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; font-weight: 600; color: #0066cc; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: slideInward 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v1A2.5 2.5 0 0 1 18 23H6.5a2.5 2.5 0 0 1-2.5-2.5v-1z"/><path d="M6.5 13H18V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v7z"/></svg>What is Breast Cancer?
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'symptoms')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: pulse 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Symptoms & Detection
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'causes')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: rotate 3s linear infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Risk Factors
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'diagnosis')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.6"/></svg>Diagnosis & Staging
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'treatment')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: float 3s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>Treatment Options
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'survival')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: sparkle 2s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg>Survival & Prognosis
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'prevention')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: shield-glow 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Prevention Strategies
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'faq')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: bob 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Frequently Asked Questions
+        </button>
+        <button class="learn-nav-item" onclick="switchLearnTab(event, 'assessment')" style="padding: 14px 20px; border: none; border-left: 3px solid transparent; text-align: left; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem; color: #666; background: none; display: flex; align-items: center;">
+          <svg style="width: 18px; height: 18px; margin-right: 12px; flex-shrink: 0; animation: chart-rise 2s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Risk Assessment
+        </button>
+      </nav>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <div class="learn-content-main" style="position: relative; z-index: 3;">
+
+    <!-- Overview Tab -->
+    <div class="learn-tab-content active" id="overview">
+      <div class="learn-article centered-overview">
+        <!-- ═══ SECTION 1: WHAT IS BREAST CANCER ═══ -->
+        <h2 class="overview-title">Comprehensive Breast Cancer Overview</h2>
+        
+        <!-- Extended Breast Cancer Description -->
+        <div class="overview-description">
+          <p>Breast cancer is cancer that starts in the breast. It can start in one or both breasts. Breast cancer happens when cells in the breast grow without control, creating a mass called a tumor that may spread elsewhere in the body. Breast cancer mostly affects females aged 45 and older, but anyone with breasts can get breast cancer. It is rare in children and males.</p>
+        </div>
+
+        <!-- Key Statistics Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg style="width: 32px; height: 32px; animation: pulse 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat-content">
+              <h4>Most Common Cancer</h4>
+              <p>Most frequently diagnosed cancer in women worldwide</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg style="width: 32px; height: 32px; animation: chart-rise 2s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/><polyline points="5 7 12 2 19 7"/></svg>
+            </div>
+            <div class="stat-content">
+              <h4>1 in 8 Women</h4>
+              <p>Will develop breast cancer in their lifetime</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg style="width: 32px; height: 32px; animation: bounce 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="stat-content">
+              <h4>Early Detection</h4>
+              <p>90%+ five-year survival rate when caught early</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg style="width: 32px; height: 32px; animation: bob 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="stat-content">
+              <h4>Demographics</h4>
+              <p>Primarily affects females aged 45+, but anyone with breast tissue can develop it</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SECTION 2: BREAST ANATOMY ═══ -->
+        <h3 class="anatomy-section-title">Breast Anatomy & Where Cancer Forms</h3>
+        
+        <!-- Anatomy Image with Zoom Functionality -->
+        <div class="anatomy-image-wrapper">
+          <img src="/static/images/Breast Anatomy, Female.jpg" alt="Breast Anatomy Diagram" class="anatomy-image" onerror="this.style.display='none'">
+          <button class="anatomy-zoom-btn" onclick="enlargeImage(this)" title="View full size">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Full-Screen Image Modal -->
+        <div id="imageModal" class="image-modal" onclick="closeImageModal(event)">
+          <div class="image-modal-content">
+            <button class="image-modal-close" onclick="closeImageModal()">×</button>
+            <img id="modalImage" src="" alt="Enlarged Image" class="image-modal-img">
+          </div>
+        </div>
+
+        <!-- Anatomy Breakdown Cards - Horizontal Row with Hover Expansion -->
+        <div class="anatomy-grid-horizontal">
+          <div class="anatomy-card-horizontal">
+            <div class="anatomy-card-front">
+              <svg class="anatomy-icon-large" style="width: 48px; height: 48px; animation: slideInward 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3c0-1 2-1 6-1s6 0 6 1m0 0c0-1 2-1 6-1s6 0 6 1m0 0v10c0 2-2 4-6 4h-6c-4 0-6-2-6-4V3M6 10l4 6m4-6l-4 6"/></svg>
+              <h4>Glandular Tissue</h4>
+            </div>
+            <div class="anatomy-card-back">
+              <h4>Glandular Tissue</h4>
+              <p><strong>Lobules & Ducts:</strong> Lobules are tiny milk-producing glands, and ducts are tubes that carry milk to the nipple.</p>
+              <p class="highlight-text"><svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13s-7-7.75-7-13c0-3.87 3.13-7 7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>Most breast cancers start here (ductal or lobular cancers)</p>
+            </div>
+          </div>
+
+          <div class="anatomy-card-horizontal">
+            <div class="anatomy-card-front">
+              <svg class="anatomy-icon-large" style="width: 48px; height: 48px; animation: pulse 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2c0 1 1 2 2 2h2c1 0 2-1 2-2H9zm-2 2h10M5 7v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V7"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+              <h4>Fibrous & Fatty Tissue</h4>
+            </div>
+            <div class="anatomy-card-back">
+              <h4>Fibrous & Fatty Tissue</h4>
+              <p><strong>Stroma:</strong> These tissues shape the breast and hold it together, providing structural support.</p>
+              <p class="highlight-text"><svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13s-7-7.75-7-13c0-3.87 3.13-7 7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>Phyllodes tumors develop in connective stroma</p>
+            </div>
+          </div>
+
+          <div class="anatomy-card-horizontal">
+            <div class="anatomy-card-front">
+              <svg class="anatomy-icon-large" style="width: 48px; height: 48px; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="8" r="6"/><ellipse cx="12" cy="16" rx="8" ry="5" opacity="0.6"/></svg>
+              <h4>The Nipple</h4>
+            </div>
+            <div class="anatomy-card-back">
+              <h4>The Nipple</h4>
+              <p><strong>Nipple & Areola:</strong> The center of the breast where milk exits and contains sensitive nerve endings.</p>
+              <p class="highlight-text"><svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13s-7-7.75-7-13c0-3.87 3.13-7 7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>Paget disease of the breast originates here</p>
+            </div>
+          </div>
+
+          <div class="anatomy-card-horizontal">
+            <div class="anatomy-card-front">
+              <svg class="anatomy-icon-large" style="width: 48px; height: 48px; animation: float 3s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M6 8.5v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7"/><path d="M6 15h12"/></svg>
+              <h4>Blood & Lymph Vessels</h4>
+            </div>
+            <div class="anatomy-card-back">
+              <h4>Blood & Lymph Vessels</h4>
+              <p><strong>Lymphatic System:</strong> Filters lymph and stores infection-fighting white blood cells, crucial for immune response.</p>
+              <p class="highlight-text"><svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13s-7-7.75-7-13c0-3.87 3.13-7 7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>Inflammatory BC blocks lymph vessels; Angiosarcoma starts in vessel linings</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SECTION 3: CANCER PROGRESSION ═══ -->
+        <h3>Cancer Progression: In Situ vs. Invasive</h3>
+        <p>Understanding how far cancer has spread is crucial for diagnosis and treatment planning.</p>
+
+        <div class="progression-comparison">
+          <div class="progression-card in-situ">
+            <div class="progression-header">
+              <span class="progression-badge">Stage 0</span>
+              <h4>Carcinoma In Situ</h4>
+            </div>
+            <div class="progression-body">
+              <div class="progression-icon">
+              <svg style="width: 40px; height: 40px; animation: shield-glow 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a2 2 0 0 1 4-2h2a2 2 0 0 1 2 2v4"/></svg>
+            </div>
+              <p>The abnormal cells remain contained within their original location (ducts or lobules) and have <strong>not spread</strong> to surrounding breast tissue.</p>
+              <div class="progression-features">
+                <div class="feature"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Non-invasive</div>
+                <div class="feature"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Confined location</div>
+                <div class="feature"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Better prognosis</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="progression-arrow">
+            <div class="arrow-icon">→</div>
+            <p>Can become</p>
+          </div>
+
+          <div class="progression-card invasive">
+            <div class="progression-header">
+              <span class="progression-badge">Stage 1-4</span>
+              <h4>Invasive Cancer</h4>
+            </div>
+            <div class="progression-body">
+              <div class="progression-icon">⚠️</div>
+              <p>The abnormal cells have broken out of their origin point and spread into surrounding breast tissue, nearby lymph nodes, or other organs. <strong>Majority of breast cancers are invasive.</strong></p>
+              <div class="progression-features">
+                <div class="feature">! Spread beyond origin</div>
+                <div class="feature">! May involve lymph nodes</div>
+                <div class="feature">! Requires treatment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SECTION 4: PRIMARY TYPES CAROUSEL ═══ -->
+        <h3>Primary Types of Breast Cancer</h3>
+        <p>Several specific diagnoses based on origin, spread, and unique features:</p>
+
+        <div class="types-carousel-container">
+          <div class="types-carousel">
+            <!-- Invasive Ductal Carcinoma -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/IDC.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Invasive Ductal Carcinoma</div>
+              <div class="type-card-body">
+                <div class="type-icon">1</div>
+                <div class="type-stats">
+                  <span class="stat-badge prevalence">Most Common</span>
+                </div>
+                <p><strong>IDC:</strong> Starts in milk ducts and spreads beyond them into surrounding breast tissue.</p>
+              </div>
+            </div>
+
+            <!-- Invasive Lobular Carcinoma -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/ILC.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Invasive Lobular Carcinoma</div>
+              <div class="type-card-body">
+                <div class="type-icon">2</div>
+                <div class="type-stats">
+                  <span class="stat-badge slower">Slow Growing</span>
+                </div>
+                <p><strong>ILC:</strong> Starts in lobules and spreads. Grows more slowly, less common than IDC, often found in both breasts.</p>
+              </div>
+            </div>
+
+            <!-- Ductal Carcinoma In Situ -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/DCS.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Ductal Carcinoma In Situ</div>
+              <div class="type-card-body">
+                <div class="type-icon">3</div>
+                <div class="type-stats">
+                  <span class="stat-badge early">Stage 0</span>
+                </div>
+                <p><strong>DCIS:</strong> Noninvasive cancer forming in milk ducts but not spread beyond them.</p>
+              </div>
+            </div>
+
+            <!-- Lobular Carcinoma In Situ -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/LCS.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Lobular Carcinoma In Situ</div>
+              <div class="type-card-body">
+                <div class="type-icon">4</div>
+                <div class="type-stats">
+                  <span class="stat-badge risk">Risk Factor</span>
+                </div>
+                <p><strong>LCIS:</strong> Abnormal cells in lobules (not technically cancer) that increase risk of developing breast cancer later.</p>
+              </div>
+            </div>
+
+            <!-- Inflammatory Breast Cancer -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/IBC.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Inflammatory Breast Cancer</div>
+              <div class="type-card-body">
+                <div class="type-icon">5</div>
+                <div class="type-stats">
+                  <span class="stat-badge rare">Rare & Aggressive</span>
+                </div>
+                <p><strong>IBC:</strong> Rare type where cancer cells block lymph vessels in skin. Makes breast red, swollen, inflamed with high recurrence risk.</p>
+              </div>
+            </div>
+
+            <!-- Triple-Negative Breast Cancer -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/TNBC.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Triple-Negative Breast Cancer</div>
+              <div class="type-card-body">
+                <div class="type-icon">6</div>
+                <div class="type-stats">
+                  <span class="stat-badge aggressive">High Risk</span>
+                </div>
+                <p><strong>TNBC:</strong> Cancer cells lack hormone receptors and HER2 protein. Has higher recurrence risk than most other forms.</p>
+              </div>
+            </div>
+
+            <!-- Metastatic Breast Cancer -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/MBC.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Metastatic Breast Cancer</div>
+              <div class="type-card-body">
+                <div class="type-icon">7</div>
+                <div class="type-stats">
+                  <span class="stat-badge stage4">Stage 4</span>
+                </div>
+                <p><strong>Metastatic:</strong> Cancer has broken away from original tumor and traveled through blood/lymph to other parts of body (bones, lungs, liver, brain).</p>
+              </div>
+            </div>
+
+            <!-- Paget Disease -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/PDB.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Paget Disease of the Breast</div>
+              <div class="type-card-body">
+                <div class="type-icon">8</div>
+                <div class="type-stats">
+                  <span class="stat-badge rare">Very Rare</span>
+                </div>
+                <p><strong>Paget's:</strong> Rare cancer involving the skin of the nipple and areola, often associated with underlying carcinoma.</p>
+              </div>
+            </div>
+
+            <!-- Phyllodes Tumor -->
+            <div class="type-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/PT.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+              <div class="type-card-header">Phyllodes Tumor</div>
+              <div class="type-card-body">
+                <div class="type-icon">9</div>
+                <div class="type-stats">
+                  <span class="stat-badge rare">Rare</span>
+                </div>
+                <p><strong>Phyllodes:</strong> Rare tumor in connective tissue. Most are benign (not cancer), but some can be malignant.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Navigation -->
+          <div class="carousel-nav">
+            <button class="carousel-btn prev" onclick="scrollCarousel('types-carousel', -1)">‹</button>
+            <button class="carousel-btn next" onclick="scrollCarousel('types-carousel', 1)">›</button>
+          </div>
+        </div>
+
+        <!-- Types of Breast Cancer Image with Zoom Functionality -->
+        <div class="types-image-wrapper">
+          <img src="/static/images/Types of Breast Cancer SVPC.jpg" alt="Types of Breast Cancer Diagram" 
+               class="types-image" onerror="this.style.display='none'">
+          <button class="types-zoom-btn" onclick="enlargeImage(this)" title="View full size">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- ═══ SECTION 5: MOLECULAR SUBTYPES ═══ -->
+        <h3>Molecular Subtypes</h3>
+        <p>Breast cancers are also categorized by molecular subtypes based on presence of specific biomarkers. These heavily influence treatment plans:</p>
+
+        <div class="molecular-grid-2col">
+          <div class="molecular-card-large tnbc">
+            <div class="molecular-card-image">
+              <img src="/static/images/TNBC.jpg" alt="Triple-Negative" class="molecular-img" onerror="this.style.display='none'">
+              <div class="molecular-img-placeholder">
+                <svg style="width: 36px; height: 36px; fill: #e74c3c;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#e74c3c" opacity="0.8"/><circle cx="50" cy="50" r="35" fill="#e74c3c" opacity="0.6"/></svg>
+              </div>
+            </div>
+            <div class="molecular-card-content">
+              <div class="molecular-header">Triple-Negative</div>
+              <p><strong>Features:</strong> Lacks hormone receptors (ER-) and HER2 protein (HER2-)</p>
+              <div class="molecular-traits">
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="#e74c3c" stroke="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>No ER</span>
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="#e74c3c" stroke="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>No PR</span>
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="#e74c3c" stroke="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>No HER2</span>
+              </div>
+              <p class="impact"><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: text-bottom; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg><strong>Impact:</strong> Limited targeted therapies, requiring chemotherapy</p>
+            </div>
+          </div>
+
+          <div class="molecular-card-large luminal-a">
+            <div class="molecular-card-image">
+              <img src="/static/images/LA.webp" alt="Luminal A" class="molecular-img" onerror="this.style.display='none'">
+              <div class="molecular-img-placeholder">
+                <svg style="width: 36px; height: 36px; fill: #27ae60;" viewBox="0 0 24 24" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#27ae60" opacity="0.8"/><circle cx="50" cy="50" r="35" fill="#27ae60" opacity="0.6"/></svg>
+              </div>
+            </div>
+            <div class="molecular-card-content">
+              <div class="molecular-header">Luminal A</div>
+              <p><strong>Features:</strong> Hormone receptor positive (ER+), HER2 negative</p>
+              <div class="molecular-traits">
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>ER+</span>
+            <span class="trait"><svg style="width: 14px; height: 14px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>PR+</span>
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="#e74c3c" stroke="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>HER2-</span>
+              </div>
+              <p class="impact"><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: text-bottom; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg><strong>Impact:</strong> Best prognosis, responds to hormone therapy</p>
+            </div>
+          </div>
+
+          <div class="molecular-card-large luminal-b">
+            <div class="molecular-card-image">
+              <img src="/static/images/LB.webp" alt="Luminal B" class="molecular-img" onerror="this.style.display='none'">
+              <div class="molecular-img-placeholder">
+                <svg style="width: 36px; height: 36px; fill: #f39c12;" viewBox="0 0 24 24" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#f39c12" opacity="0.8"/><circle cx="50" cy="50" r="35" fill="#f39c12" opacity="0.6"/></svg>
+              </div>
+            </div>
+            <div class="molecular-card-content">
+              <div class="molecular-header">Luminal B</div>
+              <p><strong>Features:</strong> Hormone receptor positive (ER+), may have HER2</p>
+              <div class="molecular-traits">
+                <span class="trait"><svg style="width: 16px; height: 16px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>ER+</span>
+                <span class="trait">Moderate PR</span>
+                <span class="trait">±HER2</span>
+              </div>
+              <p class="impact"><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: text-bottom; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg><strong>Impact:</strong> Intermediate prognosis, may need combination therapy</p>
+            </div>
+          </div>
+
+          <div class="molecular-card-large her2">
+            <div class="molecular-card-image">
+              <img src="/static/images/HER2.jpg" alt="HER2-Positive" class="molecular-img" onerror="this.style.display='none'">
+              <div class="molecular-img-placeholder">
+                <svg style="width: 36px; height: 36px; fill: #3498db;" viewBox="0 0 24 24" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#3498db" opacity="0.8"/><circle cx="50" cy="50" r="35" fill="#3498db" opacity="0.6"/></svg>
+              </div>
+            </div>
+            <div class="molecular-card-content">
+              <div class="molecular-header">HER2-Positive</div>
+              <p><strong>Features:</strong> Overexpresses HER2 protein, varies in hormone receptor status</p>
+              <div class="molecular-traits">
+            <span class="trait"><svg style="width: 14px; height: 14px; margin-right: 4px; display: inline-block; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>HER2+</span>
+                <span class="trait">Varies ER</span>
+                <span class="trait">Varies PR</span>
+              </div>
+              <p class="impact"><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: text-bottom; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg><strong>Impact:</strong> Responds to HER2-targeted therapies (Herceptin, Kadcyla)</p>\
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="learn-resources">
+          <h3><svg style="width: 20px; height: 20px; margin-right: 8px; display: inline-block; vertical-align: middle; animation: bounce 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v1A2.5 2.5 0 0 1 18 23H6.5a2.5 2.5 0 0 1-2.5-2.5v-1z"/><path d="M6.5 13H18V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v7z"/></svg>Learn More</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" target="_blank">American Cancer Society - What is Breast Cancer?</a></li>
+            <li><a href="https://www.nationalbreastcancer.org/what-is-breast-cancer/" target="_blank">National Breast Cancer Foundation - Breast Cancer Overview</a></li>
+            <li><a href="https://www.cdc.gov/cancer/breast/basic_info/what-is-breast-cancer.htm" target="_blank">CDC - Breast Cancer Basics</a></li>
+            <li><a href="https://www.cancer.net/cancer-types/breast-cancer" target="_blank">Cancer.net - Breast Cancer Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')" disabled>Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Symptoms Tab -->
+    <div class="learn-tab-content" id="symptoms">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Symptoms & Early Detection</h2>
+        <p style="font-size: 1.1rem;">Early detection significantly improves survival rates. Regular self-examination and screening are crucial.</p>
+
+        <h3>Common Symptoms</h3>
+        <div class="symptoms-grid">
+          <div class="symptom-item">
+            <img src="/static/images/Lumps.png" alt="Lump or Thickening" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Lump or Thickening</h4>
+              <p>A new lump or hard knot in the breast or underarm area</p>
+            </div>
+          </div>
+          <div class="symptom-item">
+            <img src="/static/images/redness.png" alt="Skin Changes" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Skin Changes</h4>
+              <p>Dimpling, puckering, or redness of breast skin</p>
+            </div>
+          </div>
+          <div class="symptom-item">
+            <img src="/static/images/Nipple discharge.png" alt="Nipple Changes" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Nipple Changes</h4>
+              <p>Nipple inversion, discharge, or scaling</p>
+            </div>
+          </div>
+          <div class="symptom-item">
+            <img src="/static/images/Breast pain.png" alt="Breast Pain" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Breast Pain</h4>
+              <p>Unusual pain that doesn't go away with your period</p>
+            </div>
+          </div>
+          <div class="symptom-item">
+            <img src="/static/images/shape change.png" alt="Size/Shape Changes" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Size/Shape Changes</h4>
+              <p>Unexplained change in breast size or shape</p>
+            </div>
+          </div>
+          <div class="symptom-item">
+            <img src="/static/images/Swelling.png" alt="Swelling" class="symptom-item-image">
+            <div class="symptom-item-content">
+              <h4>Swelling</h4>
+              <p>Swelling in armpit or around collarbone</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-content">
+          <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Breast Self-Examination (BSE)</h3>
+          <div class="content-highlight">
+            <svg class="highlight-icon" style="width: 32px; height: 32px; animation: pulse 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <div class="highlight-text">
+              <strong>Monthly self-exams</strong> help you become familiar with your breasts and detect changes early. Getting to know what's normal for your body makes it easier to spot any unusual changes.
+            </div>
+          </div>
+
+          <div class="bse-grid">
+            <div class="bse-card">
+              <h4><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>How to Perform BSE</h4>
+              <ol>
+                <li><strong>Step 1:</strong> Stand in front of a mirror with shoulders straight and arms at your sides</li>
+                <li><strong>Step 2:</strong> Look for visual changes in size, shape, or skin color/texture</li>
+                <li><strong>Step 3:</strong> Raise your arms and repeat the visual check</li>
+                <li><strong>Step 4:</strong> Lie down on your back and use circular motions to examine each breast</li>
+                <li><strong>Step 5:</strong> Check for lumps, thickening, or discharge</li>
+                <li><strong>Step 6:</strong> Examine underarms and collarbone area thoroughly</li>
+                <li><strong>Step 7:</strong> Repeat the entire process on the other breast</li>
+              </ol>
+            </div>
+
+            <div class="bse-card">
+              <h4>⏱️ When & How to Do BSE</h4>
+              <ul>
+                <li><strong>Timing:</strong> Perform 7-10 days after your period starts (when breast swelling is minimal)</li>
+                <li><strong>Frequency:</strong> Choose the same day each month if postmenopausal</li>
+                <li><strong>Pressure Levels:</strong> Use light, medium, and firm pressure during examination</li>
+                <li><strong>Time Needed:</strong> Take your time - thorough exam takes 10-15 minutes</li>
+                <li><strong>Position:</strong> Examine both standing and lying down for best results</li>
+                <li><strong>Pattern:</strong> Use consistent motion patterns (circular, up-and-down, or wedge patterns)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-content">
+          <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Breast Cancer Screening</h3>
+          
+          <!-- The Basics of Screening -->
+          <div class="screening-intro">
+            <h4><svg style="width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: middle; animation: heartbeat 1.5s infinite;" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 10.26 24 12 15.09 13.74 12 22 8.91 13.74 0 12 8.91 10.26 12 2"/></svg>The Basics of Screening</h4>
+            <p><strong>Purpose:</strong> Screening involves looking for breast cancer in individuals who do not have any symptoms.</p>
+            <p><strong>The Goal:</strong> Early detection. Finding cancer early often makes it easier and more effective to treat, making screening a crucial part of routine healthcare that reduces breast cancer deaths.</p>
+            <p><strong>Important Note:</strong> If a doctor recommends a screening, it does not mean they suspect you have cancer.</p>
+          </div>
+
+          <!-- Types of Screening Tests -->
+          <h4 style="font-size: 1.2rem; color: #0066cc; font-weight: 600; margin: 28px 0 16px 0;">Types of Screening Tests</h4>
+          <div class="screening-methods-grid">
+            <div class="screening-method-card">
+              <img src="/static/images/Mammography.jpg" alt="Mammography" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Mammography</h4>
+                <p>The standard screening test for most individuals. It is an X-ray picture of the breast that can detect tumors before they're palpable. Best for detecting calcifications and small masses.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>Recommended: Annual screening starting at age 40</em></p>
+              </div>
+            </div>
+
+            <div class="screening-method-card">
+              <img src="/static/images/MRI.jpg" alt="Breast MRI" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Breast MRI</h4>
+                <p>Uses strong magnets and radio waves (no radiation) to create highly detailed images of breast tissue. Provides superior visualization of lesions and is excellent for high-risk individuals.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>Often used alongside mammograms for those with dense breasts or high risk</em></p>
+              </div>
+            </div>
+
+            <div class="screening-method-card">
+              <img src="/static/images/Ultrasound.jpg" alt="Breast Ultrasound" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Breast Ultrasound</h4>
+                <p>Uses high-energy sound waves to examine breast tissues without radiation. Particularly useful for distinguishing between solid masses and fluid-filled cysts. Excellent supplemental tool for dense breast tissue.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>Supplemental screening for individuals with dense breasts</em></p>
+              </div>
+            </div>
+
+            <div class="screening-method-card">
+              <img src="/static/images/CBE.jpg" alt="Clinical Breast Exam" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Clinical Breast Exam</h4>
+                <p>A physical examination by a healthcare provider to carefully feel the breasts and underarms for lumps or unusual changes. Trained professionals can detect subtle changes that patients might miss.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>Not adequate as a standalone screening test - must be combined with imaging</em></p>
+              </div>
+            </div>
+
+            <div class="screening-method-card">
+              <img src="/static/images/BSE.jpg" alt="Breast Self-Exam" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Breast Self-Exam</h4>
+                <p>Getting familiar with how your breasts normally feel so you can immediately report any changes to a doctor. Helps increase awareness of breast changes and encourages early reporting of symptoms.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>Not an adequate screening test on its own - must be part of comprehensive approach</em></p>
+              </div>
+            </div>
+
+            <div class="screening-method-card">
+              <img src="/static/images/GT.jpg" alt="Genetic Testing" class="screening-method-card-image">
+              <div class="screening-method-card-content">
+                <h4>Genetic Testing</h4>
+                <p>Tests for BRCA1/BRCA2 mutations and other genetic risk factors that significantly increase breast cancer risk. Recommended for those with strong family history or specific risk factors.</p>
+                <p style="font-size: 0.9rem; color: #999;"><em>For high-risk individuals and those with family history</em></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits vs Harms -->
+          <h4 style="font-size: 1.2rem; color: #0066cc; font-weight: 600; margin: 32px 0 16px 0;">Benefits vs. Potential Harms of Screening</h4>
+          <div class="benefits-harms-grid">
+            <div class="benefits-card">
+              <h4>✅ Primary Benefits</h4>
+              <div class="benefit-item">
+                <strong>Early Detection & Treatment</strong>
+                <p>Detecting cancer before symptoms arise allows for earlier treatment, which has the potential to be significantly more effective and less invasive than treatment of advanced cancers.</p>
+              </div>
+              <div class="benefit-item">
+                <strong>Improved Survival Rates</strong>
+                <p>Early-stage breast cancers have survival rates exceeding 90%, while advanced stages have significantly lower rates. Screening dramatically improves outcomes for detected cases.</p>
+              </div>
+              <div class="benefit-item">
+                <strong>Peace of Mind</strong>
+                <p>Negative screening results provide reassurance and reduce anxiety about undetected cancer, allowing individuals to focus on other health priorities.</p>
+              </div>
+              <div class="benefit-item">
+                <strong>Reduced Deaths</strong>
+                <p>Consistent screening programs have been shown to reduce breast cancer mortality by 15-20% in populations utilizing regular screening.</p>
+              </div>
+            </div>
+
+            <div class="harms-card">
+              <h4>⚠️ Potential Harms</h4>
+              <div class="harm-item">
+                <strong>False-Positive Results</strong>
+                <p>A screening may flag something that looks like cancer but isn't. This can cause emotional distress, unnecessary anxiety, and lead to invasive follow-up procedures like biopsies.</p>
+              </div>
+              <div class="harm-item">
+                <strong>Overdiagnosis & Overtreatment</strong>
+                <p>Screening may find extremely slow-growing cancers that would never have caused health problems during a person's lifetime, exposing them to unnecessary treatment side effects.</p>
+              </div>
+              <div class="harm-item">
+                <strong>False-Negatives (Delayed Diagnosis)</strong>
+                <p>A screening might miss a cancer that is actually present (more common in dense breasts). This can delay diagnosis, especially if a person ignores new symptoms after a "clear" screening.</p>
+              </div>
+              <div class="harm-item">
+                <strong>Radiation Exposure</strong>
+                <p>Mammograms involve a very low, but still present, dose of radiation. Cumulative exposure over many years of screening carries a small increased cancer risk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3><svg style="width: 20px; height: 20px; margin-right: 8px; display: inline-block; vertical-align: middle; animation: bounce 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v1A2.5 2.5 0 0 1 18 23H6.5a2.5 2.5 0 0 1-2.5-2.5v-1z"/><path d="M6.5 13H18V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v7z"/></svg>Screening Resources</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection.html" target="_blank">ACS Breast Cancer Screening Guidelines</a></li>
+            <li><a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening" target="_blank">USPSTF Screening Recommendations</a></li>
+            <li><a href="https://www.mayoclinic.org/tests-procedures/mammogram/about/pac-20384806" target="_blank">Mayo Clinic - Mammogram Procedure</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Causes Tab -->
+    <div class="learn-tab-content" id="causes">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Causes & Risk Factors</h2>
+        <p style="font-size: 1.1rem;">Breast cancer develops due to a combination of genetic, hormonal, and environmental factors.</p>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Non-Modifiable Risk Factors</h3>
+        <div class="risk-factors">
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#00CEC9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Calendar blocks -->
+                <rect x="40" y="50" width="35" height="35" rx="3" fill="none" stroke="url(#ageGrad)" stroke-width="2.5"/>
+                <line x1="55" y1="55" x2="75" y2="55" stroke="url(#ageGrad)" stroke-width="2"/>
+                <rect x="47.5" y="62" width="6" height="6" fill="url(#ageGrad)"/>
+                <rect x="62.5" y="62" width="6" height="6" fill="url(#ageGrad)"/>
+                <g transform="translate(52, 100)" opacity="0.8">
+                  <rect x="0" y="0" width="35" height="35" rx="3" fill="none" stroke="url(#ageGrad)" stroke-width="2"/>
+                  <line x1="0" y1="0" x2="35" y2="35" stroke="url(#ageGrad)" stroke-width="1.5"/>
+                </g>
+                <rect x="110" y="80" width="40" height="50" rx="4" fill="none" stroke="url(#ageGrad)" stroke-width="2.5"/>
+                <circle cx="130" cy="85" r="3" fill="url(#ageGrad)"/>
+                <text x="130" y="115" text-anchor="middle" font-size="24" font-weight="bold" fill="url(#ageGrad)">50+</text>
+              </svg>
+            </div>
+            <h4>Age</h4>
+            <p>Risk increases with age. Most diagnoses occur after age 50.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="genderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF69B4"/>
+                    <stop offset="100%" style="stop-color:#0066cc"/>
+                  </linearGradient>
+                </defs>
+                <!-- Female symbol -->
+                <circle cx="70" cy="60" r="20" fill="none" stroke="url(#genderGrad)" stroke-width="3"/>
+                <line x1="70" y1="80" x2="70" y2="110" stroke="url(#genderGrad)" stroke-width="3" stroke-linecap="round"/>
+                <line x1="50" y1="100" x2="90" y2="100" stroke="url(#genderGrad)" stroke-width="3" stroke-linecap="round"/>
+                <!-- Text -->
+                <text x="145" y="90" font-size="28" font-weight="bold" fill="url(#genderGrad)">♀</text>
+                <text x="145" y="140" font-size="14" fill="url(#genderGrad)">100x</text>
+              </svg>
+            </div>
+            <h4>Gender</h4>
+            <p>Women are 100 times more likely to develop breast cancer than men.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="familyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#00CEC9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Parent 1 -->
+                <circle cx="50" cy="50" r="18" fill="none" stroke="url(#familyGrad)" stroke-width="2.5"/>
+                <circle cx="50" cy="45" r="8" fill="url(#familyGrad)" opacity="0.6"/>
+                <!-- Parent 2 -->
+                <circle cx="130" cy="50" r="18" fill="none" stroke="url(#familyGrad)" stroke-width="2.5"/>
+                <circle cx="130" cy="45" r="8" fill="url(#familyGrad)" opacity="0.6"/>
+                <!-- Child -->
+                <circle cx="90" cy="120" r="20" fill="none" stroke="url(#familyGrad)" stroke-width="2.5"/>
+                <circle cx="90" cy="113" r="9" fill="url(#familyGrad)" opacity="0.6"/>
+                <!-- Connection lines -->
+                <line x1="62" y1="65" x2="78" y2="100" stroke="url(#familyGrad)" stroke-width="2" opacity="0.7"/>
+                <line x1="118" y1="65" x2="102" y2="100" stroke="url(#familyGrad)" stroke-width="2" opacity="0.7"/>
+                <path d="M 70 70 Q 90 85 110 70" stroke="url(#familyGrad)" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4,4"/>
+              </svg>
+            </div>
+            <h4>Family History</h4>
+            <p>Having a first-degree relative with breast cancer doubles risk.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="dnaGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#FF69B4"/>
+                  </linearGradient>
+                </defs>
+                <!-- DNA strands -->
+                <path d="M 60 40 Q 80 50 100 40 Q 120 30 140 40" stroke="url(#dnaGrad2)" stroke-width="3" fill="none"/>
+                <path d="M 60 85 Q 80 95 100 85 Q 120 75 140 85" stroke="url(#dnaGrad2)" stroke-width="3" fill="none"/>
+                <path d="M 60 130 Q 80 140 100 130 Q 120 120 140 130" stroke="url(#dnaGrad2)" stroke-width="3" fill="none"/>
+                <!-- Base pairs -->
+                <line x1="70" y1="45" x2="70" y2="80" stroke="url(#dnaGrad2)" stroke-width="2" opacity="0.6"/>
+                <line x1="100" y1="40" x2="100" y2="85" stroke="url(#dnaGrad2)" stroke-width="2" opacity="0.6"/>
+                <line x1="130" y1="45" x2="130" y2="80" stroke="url(#dnaGrad2)" stroke-width="2" opacity="0.6"/>
+                <line x1="85" y1="90" x2="85" y2="125" stroke="url(#dnaGrad2)" stroke-width="2" opacity="0.6"/>
+                <line x1="115" y1="90" x2="115" y2="125" stroke="url(#dnaGrad2)" stroke-width="2" opacity="0.6"/>
+                <!-- Mutation indicator -->
+                <circle cx="100" cy="140" r="8" fill="none" stroke="#FF1493" stroke-width="2.5"/>
+                <line x1="95" y1="140" x2="105" y2="140" stroke="#FF1493" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h4>Genetic Mutations</h4>
+            <p>BRCA1/BRCA2 mutations significantly increase lifetime risk.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Modifiable Risk Factors</h3>
+        <div class="risk-factors">
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="lifestyleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#00CEC9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Dumbell -->
+                <circle cx="50" cy="100" r="12" fill="none" stroke="url(#lifestyleGrad)" stroke-width="3"/>
+                <rect x="65" y="95" width="70" height="10" rx="5" fill="none" stroke="url(#lifestyleGrad)" stroke-width="2.5"/>
+                <circle cx="150" cy="100" r="12" fill="none" stroke="url(#lifestyleGrad)" stroke-width="3"/>
+                <circle cx="50" cy="100" r="3" fill="url(#lifestyleGrad)"/>
+                <circle cx="150" cy="100" r="3" fill="url(#lifestyleGrad)"/>
+                <!-- Running figure silhouette -->
+                <circle cx="100" cy="50" r="8" fill="url(#lifestyleGrad)"/>
+                <path d="M 100 60 L 85 85" stroke="url(#lifestyleGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M 100 70 L 115 85" stroke="url(#lifestyleGrad)" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="85" cy="95" r="5" fill="url(#lifestyleGrad)"/>
+                <!-- Apple -->
+                <circle cx="130" cy="70" r="14" fill="none" stroke="url(#lifestyleGrad)" stroke-width="2.5"/>
+                <path d="M 137 56 Q 144 50 140 56" stroke="url(#lifestyleGrad)" stroke-width="2" fill="#00CEC9"/>
+              </svg>
+            </div>
+            <h4>Lifestyle Factors</h4>
+            <p>Lack of physical activity, poor diet, and obesity increase risk.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hormoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF69B4"/>
+                    <stop offset="100%" style="stop-color:#0066cc"/>
+                  </linearGradient>
+                </defs>
+                <!-- Hormone molecule structure -->
+                <circle cx="60" cy="80" r="10" fill="none" stroke="url(#hormoneGrad)" stroke-width="2.5"/>
+                <circle cx="100" cy="70" r="10" fill="none" stroke="url(#hormoneGrad)" stroke-width="2.5"/>
+                <circle cx="140" cy="80" r="10" fill="none" stroke="url(#hormoneGrad)" stroke-width="2.5"/>
+                <circle cx="80" cy="120" r="10" fill="none" stroke="url(#hormoneGrad)" stroke-width="2.5"/>
+                <circle cx="120" cy="120" r="10" fill="none" stroke="url(#hormoneGrad)" stroke-width="2.5"/>
+                <!-- Connecting bonds -->
+                <line x1="70" y1="80" x2="90" y2="70" stroke="url(#hormoneGrad)" stroke-width="2"/>
+                <line x1="110" y1="70" x2="130" y2="80" stroke="url(#hormoneGrad)" stroke-width="2"/>
+                <line x1="60" y1="90" x2="75" y2="115" stroke="url(#hormoneGrad)" stroke-width="2"/>
+                <line x1="140" y1="90" x2="125" y2="115" stroke="url(#hormoneGrad)" stroke-width="2"/>
+                <line x1="80" y1="130" x2="120" y2="130" stroke="url(#hormoneGrad)" stroke-width="2"/>
+                <!-- Plus sign (addition/therapy) -->
+                <g transform="translate(50, 150)">
+                  <line x1="0" y1="-8" x2="0" y2="8" stroke="url(#hormoneGrad)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="-8" y1="0" x2="8" y2="0" stroke="url(#hormoneGrad)" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <h4>Hormone Therapy</h4>
+            <p>Long-term use of combined hormone replacement therapy.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="alcoholGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#00CEC9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Wine bottle -->
+                <path d="M 80 50 L 80 70 Q 80 75 85 80 L 85 140 Q 85 150 90 155 L 90 160 L 110 160 L 110 155 Q 115 150 115 140 L 115 80 Q 120 75 120 70 L 120 50 Z" fill="none" stroke="url(#alcoholGrad)" stroke-width="2.5"/>
+                <!-- Liquid inside -->
+                <path d="M 85 120 L 85 140 Q 85 150 90 155 L 110 155 Q 115 150 115 140 L 115 120" fill="url(#alcoholGrad)" opacity="0.3"/>
+                <!-- Warning slash -->
+                <line x1="130" y1="80" x2="160" y2="130" stroke="#FF1493" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="145" cy="105" r="25" fill="none" stroke="#FF1493" stroke-width="2.5" opacity="0.6"/>
+              </svg>
+            </div>
+            <h4>Alcohol Consumption</h4>
+            <p>Even moderate drinking increases breast cancer risk.</p>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="reproGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF69B4"/>
+                    <stop offset="100%" style="stop-color:#0066cc"/>
+                  </linearGradient>
+                </defs>
+                <!-- Parent figure -->
+                <circle cx="100" cy="45" r="14" fill="url(#reproGrad)" opacity="0.7"/>
+                <path d="M 100 60 L 100 100" stroke="url(#reproGrad)" stroke-width="3"/>
+                <path d="M 75 75 L 100 90" stroke="url(#reproGrad)" stroke-width="3"/>
+                <path d="M 125 75 L 100 90" stroke="url(#reproGrad)" stroke-width="3"/>
+                <!-- Baby figures -->
+                <circle cx="60" cy="130" r="10" fill="url(#reproGrad)" opacity="0.6"/>
+                <circle cx="100" cy="135" r="10" fill="url(#reproGrad)" opacity="0.6"/>
+                <circle cx="140" cy="130" r="10" fill="url(#reproGrad)" opacity="0.6"/>
+                <!-- Question mark (timing) -->
+                <path d="M 50 80 Q 45 75 45 70" stroke="url(#reproGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <text x="50" y="85" font-size="16" font-weight="bold" fill="url(#reproGrad)">?</text>
+              </svg>
+            </div>
+            <h4>Reproductive History</h4>
+            <p>Late first pregnancy, no children, or early menstruation.</p>
+          </div>
+        </div>
+
+        <div class="learn-content">
+          <h3>Risk Factors Summary</h3>
+          <div class="content-highlight">
+            <svg class="highlight-icon" style="width: 32px; height: 32px; animation: rotate 3s linear infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div class="highlight-text">
+              <strong>Risk factors</strong> increase the likelihood of developing breast cancer, but having risk factors doesn't mean you will get the disease.
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-card">
+              <h4>Non-Modifiable Risk Factors</h4>
+              <ul class="content-list">
+                <li><strong>Age:</strong> Risk increases with age</li>
+                <li><strong>Gender:</strong> Women are 100x more likely</li>
+                <li><strong>Family History:</strong> BRCA1/BRCA2 mutations</li>
+                <li><strong>Personal History:</strong> Previous breast cancer</li>
+                <li><strong>Genetics:</strong> Inherited gene mutations</li>
+                <li><strong>Menstrual History:</strong> Early menstruation, late menopause</li>
+              </ul>
+            </div>
+
+            <div class="content-card">
+              <h4>Modifiable Risk Factors</h4>
+              <ul class="content-list">
+                <li><strong>Lifestyle:</strong> Alcohol consumption</li>
+                <li><strong>Weight:</strong> Being overweight/obese</li>
+                <li><strong>Exercise:</strong> Physical inactivity</li>
+                <li><strong>Hormone Therapy:</strong> Long-term use</li>
+                <li><strong>Reproductive Factors:</strong> No children, late first pregnancy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Risk Assessment Tools</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.gov/bcrisktool/" target="_blank">NCI Breast Cancer Risk Assessment Tool</a></li>
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/risk-and-prevention.html" target="_blank">ACS Risk Factors & Prevention</a></li>
+            <li><a href="https://www.cdc.gov/cancer/breast/basic_info/risk_factors.htm" target="_blank">CDC Breast Cancer Risk Factors</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Diagnosis Tab -->
+    <div class="learn-tab-content" id="diagnosis">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Diagnosis & Staging</h2>
+        <p style="font-size: 1.1rem;">Diagnosis involves multiple steps to confirm cancer presence, type, and extent.</p>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Diagnostic Process</h3>
+        <div class="diagnosis-steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Clinical Exam</h4>
+            <p>Physical examination by healthcare provider</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Imaging</h4>
+            <p>Mammogram, ultrasound, or MRI</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Biopsy</h4>
+            <p>Tissue sample for laboratory analysis</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Pathology</h4>
+            <p>Cancer type, grade, and receptor status</p>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">TNM Staging System</h3>
+        <table class="staging-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Tumor Size</th>
+              <th>Node Involvement</th>
+              <th>Metastasis</th>
+              <th>5-Year Survival</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I</td>
+              <td>≤2cm</td>
+              <td>No</td>
+              <td>No</td>
+              <td>99%</td>
+            </tr>
+            <tr>
+              <td>II</td>
+              <td>2-5cm</td>
+              <td>1-3 nodes</td>
+              <td>No</td>
+              <td>93%</td>
+            </tr>
+            <tr>
+              <td>III</td>
+              <td>>5cm</td>
+              <td>4+ nodes</td>
+              <td>No</td>
+              <td>72%</td>
+            </tr>
+            <tr>
+              <td>IV</td>
+              <td>Any size</td>
+              <td>Any</td>
+              <td>Yes</td>
+              <td>31%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="learn-content">
+          <h3>Cancer Staging Overview</h3>
+          <div class="content-highlight">
+            <svg class="highlight-icon" style="width: 32px; height: 32px; animation: chart-rise 2s ease-in-out infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/><polyline points="5 7 12 2 19 7"/></svg>
+            <div class="highlight-text">
+              <strong>Staging</strong> determines the extent of cancer spread and helps guide treatment decisions and prognosis.
+            </div>
+          </div>
+
+          <div class="staging-grid">
+            <div class="staging-card">
+              <img src="/static/images/st0.png" alt="Stage 0" class="staging-card-image">
+              <div class="staging-card-content">
+                <h4>Stage 0 (Carcinoma In Situ)</h4>
+                <p><strong>Classification:</strong> Non-invasive disease. Cancer cells are present but have not invaded surrounding tissue.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="staging-list">
+                  <li>Ductal Carcinoma In Situ (DCIS)</li>
+                  <li>Lobular Carcinoma In Situ (LCIS)</li>
+                  <li>No lymph node involvement</li>
+                  <li>No systemic metastasis</li>
+                </ul>
+                <p><strong>5-Year Survival:</strong> 99%+</p>
+                <p><strong>Treatment:</strong> Surgery ± radiation therapy</p>
+              </div>
+            </div>
+
+            <div class="staging-card">
+              <img src="/static/images/st1.png" alt="Stage 1" class="staging-card-image">
+              <div class="staging-card-content">
+                <h4>Stage I (Early-Stage Invasive)</h4>
+                <p><strong>Classification:</strong> Early invasive cancer with limited growth and spread.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="staging-list">
+                  <li>Tumor ≤ 2 cm in diameter</li>
+                  <li>No lymph node involvement (Stage IA)</li>
+                  <li>Or limited micrometastases in lymph nodes (Stage IB)</li>
+                  <li>No distant metastasis</li>
+                </ul>
+                <p><strong>5-Year Survival:</strong> 98-99%</p>
+                <p><strong>Treatment:</strong> Surgery + radiation, chemotherapy may be considered</p>
+              </div>
+            </div>
+
+            <div class="staging-card">
+              <img src="/static/images/st2.png" alt="Stage 2" class="staging-card-image">
+              <div class="staging-card-content">
+                <h4>Stage II (Locally Advanced)</h4>
+                <p><strong>Classification:</strong> Larger tumor with regional lymph node involvement but no distant spread.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="staging-list">
+                  <li>Tumor 2-5 cm OR</li>
+                  <li>Tumor <2 cm with positive lymph nodes (Stage IIA)</li>
+                  <li>Tumor 2-5 cm with 1-3 positive nodes (Stage IIB)</li>
+                  <li>No distant metastasis</li>
+                </ul>
+                <p><strong>5-Year Survival:</strong> 93%</p>
+                <p><strong>Treatment:</strong> Surgery + chemotherapy + radiation, hormonal therapy</p>
+              </div>
+            </div>
+
+            <div class="staging-card">
+              <img src="/static/images/st3.png" alt="Stage 3" class="staging-card-image">
+              <div class="staging-card-content">
+                <h4>Stage III (Locally Advanced)</h4>
+                <p><strong>Classification:</strong> Significant local and/or regional involvement with potential for cure via aggressive multimodal therapy.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="staging-list">
+                  <li>Tumor of any size with extensive lymph node involvement</li>
+                  <li>Or chest wall/skin involvement</li>
+                  <li>Inflammatory breast cancer</li>
+                  <li>No distant metastasis</li>
+                </ul>
+                <p><strong>5-Year Survival:</strong> 72%</p>
+                <p><strong>Treatment:</strong> Neoadjuvant chemotherapy → surgery → radiation + adjuvant therapy</p>
+              </div>
+            </div>
+
+            <div class="staging-card">
+              <img src="/static/images/st4.png" alt="Stage 4" class="staging-card-image">
+              <div class="staging-card-content">
+                <h4>Stage IV (Metastatic)</h4>
+                <p><strong>Classification:</strong> Cancer has spread to distant organs (brain, lungs, liver, bones). Incurable but treatable.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="staging-list">
+                  <li>Tumor of any size with any nodal involvement</li>
+                  <li>Distant metastases present</li>
+                  <li>Most common sites: bones, lungs, liver, brain</li>
+                  <li>De novo vs. recurrent metastatic disease</li>
+                </ul>
+                <p><strong>5-Year Survival:</strong> 31% (varies widely by site and biology)</p>
+                <p><strong>Treatment:</strong> Systemic therapy (chemotherapy, hormonal, immunotherapy, targeted therapy)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Diagnostic Resources</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/detection-diagnosis-staging.html" target="_blank">ACS Diagnosis & Staging</a></li>
+            <li><a href="https://www.nccn.org/patientresources/patient-resources/breast-cancer" target="_blank">NCCN Breast Cancer Guidelines</a></li>
+            <li><a href="https://www.breastcancer.org/symptoms/diagnosis" target="_blank">Breastcancer.org Diagnosis</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Treatment Tab -->
+    <div class="learn-tab-content" id="treatment">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Treatment Options</h2>
+        <p style="font-size: 1.1rem;">Treatment plans are individualized based on cancer type, stage, and patient factors.</p>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Standard Treatment Modalities</h3>
+        <div class="treatment-grid">
+          <div class="treatment-card">
+            <img src="/static/images/surgery.jpg" alt="Surgery" class="treatment-card-image">
+            <div class="treatment-card-content">
+              <h4>Surgical Intervention</h4>
+              <p><strong>Purpose:</strong> Primary treatment to remove cancerous tissue and affected lymph nodes.</p>
+              <ul class="treatment-list">
+                <li><strong>Lumpectomy:</strong> Breast-conserving surgery removing tumor with margin</li>
+                <li><strong>Mastectomy:</strong> Complete or modified radical breast removal</li>
+                <li><strong>Sentinel Node Biopsy:</strong> Remove first lymph node(s) to assess spread</li>
+                <li><strong>Axillary Dissection:</strong> Removal of underarm lymph nodes</li>
+                <li><strong>Reconstructive Surgery:</strong> Restore breast appearance</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Often first-line treatment, frequently combined with radiation and systemic therapy</em></p>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <img src="/static/images/Radiation Therapy.webp" alt="Radiation" class="treatment-card-image">
+            <div class="treatment-card-content">
+              <h4>Radiation Therapy</h4>
+              <p><strong>Purpose:</strong> Use high-energy rays to destroy cancer cells and prevent local recurrence.</p>
+              <ul class="treatment-list">
+                <li><strong>External Beam Radiation:</strong> Targeted rays from outside body</li>
+                <li><strong>Brachytherapy:</strong> Radioactive implants placed inside breast</li>
+                <li><strong>Partial Breast Irradiation (PBI):</strong> Targeted radiation to tumor site only</li>
+                <li><strong>Post-Mastectomy Radiation:</strong> Radiation to chest wall after surgery</li>
+                <li><strong>Regional Node Irradiation:</strong> Treatment to affected lymph nodes</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Typically given daily over 5-7 weeks, combined with surgery ± chemotherapy</em></p>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <img src="/static/images/Chemotherapy.jpg" alt="Chemotherapy" class="treatment-card-image">
+            <div class="treatment-card-content">
+              <h4>Chemotherapy</h4>
+              <p><strong>Purpose:</strong> Use anti-cancer drugs to destroy rapidly dividing cells throughout the body.</p>
+              <ul class="treatment-list">
+                <li><strong>Adjuvant:</strong> Chemotherapy after surgery to reduce recurrence risk</li>
+                <li><strong>Neoadjuvant:</strong> Chemotherapy before surgery to shrink tumor</li>
+                <li><strong>Palliative:</strong> Chemotherapy for metastatic disease to improve symptoms</li>
+                <li><strong>Dose-Dense Regimens:</strong> Higher doses given more frequently</li>
+                <li><strong>Common Agents:</strong> Anthracyclines, taxanes, cyclophosphamide</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Typically 4-8 cycles given every 2-3 weeks over 3-6 months</em></p>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <img src="/static/images/Hormone Therapy.jpg" alt="Hormone Therapy" class="treatment-card-image">
+            <div class="treatment-card-content">
+              <h4>Hormone Therapy (Endocrine Therapy)</h4>
+              <p><strong>Purpose:</strong> Block estrogen's effects on hormone receptor-positive breast cancer cells.</p>
+              <ul class="treatment-list">
+                <li><strong>Tamoxifen:</strong> Estrogen receptor antagonist for pre/postmenopausal women</li>
+                <li><strong>Aromatase Inhibitors:</strong> Block estrogen production in postmenopausal women</li>
+                <li><strong>Fulvestrant:</strong> Estrogen receptor degrader for advanced disease</li>
+                <li><strong>Ovarian Suppression:</strong> Stop ovary estrogen production in premenopausal women</li>
+                <li><strong>Duration:</strong> Typically 5-10 years of continuous therapy</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>For ER/PR+ tumors; often combined with CDK4/6 inhibitors in advanced disease</em></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Targeted Therapies</h3>
+        <div class="targeted-therapies">
+          <div class="therapy-card">
+            <img src="/static/images/HER2-Targeted.jpg" alt="HER2-Targeted Therapy" class="therapy-card-image">
+            <div class="therapy-card-content">
+              <h4>HER2-Targeted Therapy</h4>
+              <p><strong>Indication:</strong> HER2-positive breast cancers (approximately 15-20% of cases) showing overexpression of HER2 protein receptor.</p>
+              <ul class="therapy-list">
+                <li><strong>Trastuzumab (Herceptin):</strong> Monoclonal antibody that binds HER2 receptor, preventing cell growth and signaling. First approved HER2-targeted therapy with proven efficacy.</li>
+                <li><strong>Pertuzumab:</strong> Combination therapy partner for Herceptin, targets different epitope of HER2, blocking ligand-induced activation.</li>
+                <li><strong>T-DM1 (Kadcyla):</strong> Antibody-drug conjugate combining Herceptin with chemotherapy payload for enhanced cell death.</li>
+                <li><strong>Lapatinib:</strong> Tyrosine kinase inhibitor for small-molecule HER2 and EGFR blocking.</li>
+                <li><strong>Tucatinib:</strong> Newer oral HER2 inhibitor for metastatic breast cancer with improved CNS penetration.</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Often combined with chemotherapy for early-stage disease; single-agent for metastatic disease. Potential cardiac side effects require monitoring with echocardiograms.</em></p>
+            </div>
+          </div>
+          <div class="therapy-card">
+            <img src="/static/images/CDK4-6 Inhibitors.png" alt="CDK4/6 Inhibitors" class="therapy-card-image">
+            <div class="therapy-card-content">
+              <h4>CDK4/6 Inhibitors</h4>
+              <p><strong>Indication:</strong> Hormone receptor-positive, HER2-negative breast cancers to restore hormone therapy effectiveness and block cell cycle progression.</p>
+              <ul class="therapy-list">
+                <li><strong>Palbociclib (Ibrance):</strong> First-in-class CDK4/6 inhibitor improving progression-free survival when combined with endocrine therapy. Thrombocytopenia common side effect.</li>
+                <li><strong>Ribociclib (Kisqali):</strong> Approved for pre and postmenopausal women, can be combined with aromatase inhibitors or fulvestrant. Better cardiac safety profile.</li>
+                <li><strong>Abemaciclib (Verzenio):</strong> Selective CDK4/6 inhibitor with activity against CDK2. Can be used as single-agent in certain settings. Diarrhea is common side effect.</li>
+                <li><strong>Letrozole + CDK4/6:</strong> Standard combination for first-line treatment of advanced HR+ disease improving overall survival.</li>
+                <li><strong>Sequential Therapy:</strong> Rotation between different inhibitors when resistance develops, extending treatment duration.</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Revolutionized HR+ metastatic breast cancer treatment by restoring hormone therapy effectiveness. Side effects manageable with supportive care and dose modifications.</em></p>
+            </div>
+          </div>
+          <div class="therapy-card">
+            <img src="/static/images/PARP Inhibitors.jpg" alt="PARP Inhibitors" class="therapy-card-image">
+            <div class="therapy-card-content">
+              <h4>PARP Inhibitors</h4>
+              <p><strong>Indication:</strong> BRCA1/BRCA2 mutations and homologous recombination-deficient (HRD) tumors exploiting DNA repair deficiencies for selective cell death.</p>
+              <ul class="therapy-list">
+                <li><strong>Olaparib (Lynparza):</strong> First PARP inhibitor approved for BRCA-mutated metastatic breast cancer. Mechanism: blocks poly-ADP-ribose polymerase preventing DNA repair which is synthetic lethal in BRCA-deficient cells.</li>
+                <li><strong>Talazoparib (Talquetamab):</strong> Highly selective PARP1 inhibitor with improved tolerability profile. Larger fold-difference in PARP inhibition specificity.</li>
+                <li><strong>Rucaparib (Rubraca):</strong> Multi-targeted PARP inhibitor with checkpoint kinase inhibitor activity. Alternative for BRCA/HRD-positive advanced breast cancer.</li>
+                <li><strong>Maintenance Therapy:</strong> Emerging role as maintenance treatment after chemotherapy in newly diagnosed advanced-stage BRCA-mutated disease.</li>
+                <li><strong>Biomarker Testing:</strong> Requires germline/somatic BRCA testing or HRD assay (Myriad, Foundation, Guardant). Testing now routine standard of care.</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Precision medicine approach targeting specific DNA repair defects. Significantly improves progression-free survival in appropriate populations. Anemia/thrombocytopenia monitoring essential.</em></p>
+            </div>
+          </div>
+          <div class="therapy-card">
+            <img src="/static/images/Immunotherapy.jpg" alt="Immunotherapy" class="therapy-card-image">
+            <div class="therapy-card-content">
+              <h4>Immunotherapy</h4>
+              <p><strong>Indication:</strong> Triple-negative breast cancer (TNBC) and PD-L1 positive tumors to harness immune system against cancer cells via checkpoint inhibition.</p>
+              <ul class="therapy-list">
+                <li><strong>Atezolizumab (Tecentriq):</strong> PD-L1 inhibitor approved with chemotherapy for PD-L1+ advanced TNBC. Mechanism: blocks immune-checkpoint allowing T-cell activation against cancer.</li>
+                <li><strong>Pembrolizumab (Keytruda):</strong> PD-1 inhibitor with expanding breast cancer indications. Higher response rates in microsatellite instability-high (MSI-H) or mismatch repair-deficient (dMMR) tumors.</li>
+                <li><strong>Durvalumab (Imfinzi):</strong> PD-L1 inhibitor emerging role in advanced TNBC. Often combined with chemotherapy for enhanced immune activation.</li>
+                <li><strong>Combination Approaches:</strong> Checkpoint inhibitor + chemotherapy shows superior outcomes compared to single-agent approaches. Addition of anti-CTLA-4 agents under investigation.</li>
+                <li><strong>Neoadjuvant Setting:</strong> Checkpoint inhibitors + chemotherapy in early-stage TNBC improving pathologic complete response rates and potentially long-term outcomes.</li>
+              </ul>
+              <p style="margin-top: 12px;"><em>Most effective in triple-negative and high-burden disease. Immune-related adverse events (irAEs) require vigilant monitoring and management. Predictive biomarkers (TMB, PD-L1, microsatellite status) guide patient selection.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-content">
+          <h3>Treatment Modalities</h3>
+          <div class="content-highlight">
+            <svg class="highlight-icon" style="width: 32px; height: 32px; animation: bob 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M4 10v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M3 10h18"/><path d="M9 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V2"/></svg>
+            <div class="highlight-text">
+              <strong>Treatment plans</strong> are individualized based on cancer type, stage, and patient factors.
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-card">
+              <h4>Local Treatments</h4>
+              <ul class="content-list">
+                <li><strong>Surgery:</strong> Lumpectomy or mastectomy</li>
+                <li><strong>Radiation:</strong> External beam or brachytherapy</li>
+                <li><strong>Targeted:</strong> Destroys specific cancer cells</li>
+              </ul>
+            </div>
+
+            <div class="content-card">
+              <h4>Systemic Treatments</h4>
+              <ul class="content-list">
+                <li><strong>Chemotherapy:</strong> Drugs that kill cancer cells</li>
+                <li><strong>Hormone Therapy:</strong> For hormone receptor-positive tumors</li>
+                <li><strong>Immunotherapy:</strong> Boosts immune system response</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Treatment Resources</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/treatment.html" target="_blank">ACS Treatment Options</a></li>
+            <li><a href="https://www.nccn.org/patientresources/patient-resources/breast-cancer" target="_blank">NCCN Treatment Guidelines</a></li>
+            <li><a href="https://www.breastcancer.org/treatment" target="_blank">Breastcancer.org Treatment Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Survival Tab -->
+    <div class="learn-tab-content" id="survival">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Survival & Prognosis</h2>
+        <p style="font-size: 1.1rem;">Survival rates have improved significantly due to early detection and better treatments.</p>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">5-Year Survival Rates by Stage</h3>
+        <div class="survival-chart">
+          <div class="survival-bar">
+            <span class="stage-label">Stage 0</span>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 99%; animation-delay: 0s;"></div>
+              <span class="percentage">99%</span>
+            </div>
+          </div>
+          <div class="survival-bar">
+            <span class="stage-label">Stage I</span>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 99%; animation-delay: 0.1s;"></div>
+              <span class="percentage">99%</span>
+            </div>
+          </div>
+          <div class="survival-bar">
+            <span class="stage-label">Stage II</span>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 93%; animation-delay: 0.2s;"></div>
+              <span class="percentage">93%</span>
+            </div>
+          </div>
+          <div class="survival-bar">
+            <span class="stage-label">Stage III</span>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 72%; animation-delay: 0.3s;"></div>
+              <span class="percentage">72%</span>
+            </div>
+          </div>
+          <div class="survival-bar">
+            <span class="stage-label">Stage IV</span>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 31%; animation-delay: 0.4s;"></div>
+              <span class="percentage">31%</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Prognostic Factors</h3>
+        <div class="prognostic-factors">
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c2.5 0 4.5 2 4.5 4.5S14.5 11 12 11s-4.5-2-4.5-4.5S9.5 2 12 2M12 11c-3 0-6 2-6 6v5h12v-5c0-4-3-6-6-6z"/></svg>
+            </div>
+            <h4>Tumor Size</h4>
+            <p><strong>Critical Factor:</strong> Smaller tumors (≤2cm) have significantly better outcomes and respond better to treatment.</p>
+            <ul class="factor-details">
+              <li>Size ≤2cm: Higher survival rates</li>
+              <li>Size 2-5cm: Moderate prognostic impact</li>
+              <li>Size >5cm: Requires aggressive therapy</li>
+            </ul>
+          </div>
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M7 12h10M12 7v10"/></svg>
+            </div>
+            <h4>Lymph Node Status</h4>
+            <p><strong>Major Prognostic Factor:</strong> Number of affected lymph nodes strongly influences long-term survival and treatment intensity.</p>
+            <ul class="factor-details">
+              <li>Node-negative (N0): Best prognosis</li>
+              <li>1-3 nodes (N1): Intermediate</li>
+              <li>≥4 nodes (N2/N3): Requires intensive treatment</li>
+            </ul>
+          </div>
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Tumor Grade</h4>
+            <p><strong>Indicates Aggressiveness:</strong> Histological grade shows how quickly cancer cells divide and how different they are from normal cells.</p>
+            <ul class="factor-details">
+              <li>Grade 1 (low): Slow growth, better prognosis</li>
+              <li>Grade 2 (intermediate): Moderate growth rate</li>
+              <li>Grade 3 (high): Rapid growth, more aggressive</li>
+            </ul>
+          </div>
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7h10v10H7z"/></svg>
+            </div>
+            <h4>Hormone Receptor Status</h4>
+            <p><strong>Predicts Treatment Response:</strong> ER/PR positive tumors respond to hormone therapy with excellent long-term outcomes.</p>
+            <ul class="factor-details">
+              <li>ER+ or PR+: Hormone therapy effective</li>
+              <li>ER- or PR-: Requires chemotherapy/targeted agents</li>
+              <li>Triple-negative: Limited targeted options</li>
+            </ul>
+          </div>
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 6a6 6 0 100 12 6 6 0 000-12Z"/></svg>
+            </div>
+            <h4>HER2 Status</h4>
+            <p><strong>Indicates Aggressive Potential:</strong> HER2 overexpression drives faster cell growth but responds excellently to targeted therapies like Herceptin.</p>
+            <ul class="factor-details">
+              <li>HER2 positive: Access to targeted therapy</li>
+              <li>HER2 negative: Standard treatment approach</li>
+              <li>HER2 tests via IHC or FISH essential</li>
+            </ul>
+          </div>
+          <div class="factor-card">
+            <div class="factor-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </div>
+            <h4>Proliferation Index (Ki-67)</h4>
+            <p><strong>Measures Cell Division Rate:</strong> Higher Ki-67 indicates rapid cell proliferation and requires more intensive treatment approaches.</p>
+            <ul class="factor-details">
+              <li>Low (<10%): Indolent behavior</li>
+              <li>Intermediate (10-25%): Moderate activity</li>
+              <li>High (>25%): Aggressive phenotype</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Survival Statistics</h3>
+          <ul class="resource-links">
+            <li><a href="https://seer.cancer.gov/statfacts/html/breast.html" target="_blank">SEER Breast Cancer Statistics</a></li>
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/understanding-a-breast-cancer-diagnosis.html" target="_blank">ACS Understanding Prognosis</a></li>
+            <li><a href="https://www.breastcancer.org/symptoms/diagnosis/prognosis" target="_blank">Breastcancer.org Prognosis Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Prevention Tab -->
+    <div class="learn-tab-content" id="prevention">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Breast Cancer Prevention & Risk Reduction</h2>
+        <p style="font-size: 1.1rem;">While not all breast cancer can be prevented, certain lifestyle changes can reduce risk.</p>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Lifestyle Risk Reduction</h3>
+        <div class="prevention-grid">
+          <div class="prevention-card">
+            <img src="/static/images/healthy wt.webp" alt="Maintain Healthy Weight" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Maintain Healthy Weight</h4>
+              <p>Obesity increases breast cancer risk by up to 30%. Maintaining a BMI between 18.5-24.9 significantly reduces risk.</p>
+              <ul class="prevention-details">
+                <li>Obesity linked to higher estrogen levels</li>
+                <li>Weight loss of 5-10% shows measurable benefit</li>
+                <li>Focus on sustainable lifestyle changes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prevention-card">
+            <img src="/static/images/Regular Exercise.jpg" alt="Regular Exercise" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Regular Exercise</h4>
+              <p>150 minutes of moderate activity per week reduces breast cancer risk by 10-20%. Physical activity strengthens immune function.</p>
+              <ul class="prevention-details">
+                <li>Aerobic exercise most effective</li>
+                <li>Combine with strength training</li>
+                <li>Consistency matters more than intensity</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prevention-card">
+            <img src="/static/images/Limit Alcohol.jpg" alt="Limit Alcohol" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Limit Alcohol</h4>
+              <p>Alcohol consumption increases breast cancer risk dose-dependently. Limiting to no more than 1 drink per day is recommended.</p>
+              <ul class="prevention-details">
+                <li>Risk increases with each drink daily</li>
+                <li>Even light drinking raises risk slightly</li>
+                <li>Alcohol reduces folate absorption</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prevention-card">
+            <img src="/static/images/Healthy Diet.jpg" alt="Healthy Diet" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Healthy Diet</h4>
+              <p>Plant-based diets rich in fruits, vegetables, and whole grains provide protective antioxidants and phytochemicals.</p>
+              <ul class="prevention-details">
+                <li>Cruciferous vegetables most protective</li>
+                <li>Reduce red and processed meat</li>
+                <li>Include omega-3 fatty acids</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prevention-card">
+            <img src="/static/images/Avoid Smoking.jpg" alt="Avoid Smoking" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Avoid Smoking</h4>
+              <p>Smoking increases breast cancer risk, especially in premenopausal women. Secondhand smoke also poses measurable risk.</p>
+              <ul class="prevention-details">
+                <li>Harmful carcinogens in tobacco</li>
+                <li>Reduced immunosurveillance</li>
+                <li>Never smokers have lowest risk</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prevention-card">
+            <img src="/static/images/Breastfeed.jpg" alt="Breastfeed" class="prevention-card-image">
+            <div class="prevention-card-content">
+              <h4>Breastfeed</h4>
+              <p>Breastfeeding reduces breast cancer risk by 4.3% for every 12 months of breastfeeding. Lactation modifies breast tissue.</p>
+              <ul class="prevention-details">
+                <li>Prolonged lactation most protective</li>
+                <li>Modifies hormonal environment</li>
+                <li>Cumulative effect across pregnancies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #000000; margin: 32px 0 16px 0;">Medical Prevention</h3>
+        <div class="medical-prevention">
+          <div class="medical-card">
+            <img src="/static/images/chemo.jpg" alt="Chemoprevention" class="medical-card-image">
+            <div class="medical-card-content">
+              <h4>Chemoprevention</h4>
+              <p><strong>Drug-Based Prevention:</strong> Selective estrogen receptor modulators (SERMs) for high-risk women to reduce breast cancer incidence.</p>
+              <ul class="medical-details">
+                <li><strong>Tamoxifen:</strong> Reduces risk by ~50% in high-risk women; for pre and postmenopausal</li>
+                <li><strong>Raloxifene:</strong> Alternative for postmenopausal women; similar efficacy</li>
+                <li><strong>Aromatase Inhibitors:</strong> Newer option showing promise in prevention trials</li>
+              </ul>
+            </div>
+          </div>
+          <div class="medical-card">
+            <img src="/static/images/Prophylactic Surgery.jpg" alt="Prophylactic Surgery" class="medical-card-image">
+            <div class="medical-card-content">
+              <h4>Prophylactic Surgery</h4>
+              <p><strong>Risk-Reducing Procedures:</strong> Surgical removal of at-risk tissue for BRCA carriers to dramatically reduce cancer risk.</p>
+              <ul class="medical-details">
+                <li><strong>Prophylactic Mastectomy:</strong> Reduces risk by 90%+ in BRCA+ patients</li>
+                <li><strong>Oophorectomy:</strong> Removes ovaries to reduce hormone production</li>
+                <li><strong>Salpingo-oophorectomy:</strong> Removal of fallopian tubes and ovaries combined</li>
+              </ul>
+            </div>
+          </div>
+          <div class="medical-card">
+            <img src="/static/images/Regular Screening.jpg" alt="Regular Screening" class="medical-card-image">
+            <div class="medical-card-content">
+              <h4>Regular Screening</h4>
+              <p><strong>Early Detection Protocols:</strong> Surveillance programs for high-risk individuals using advanced imaging and monitoring techniques.</p>
+              <ul class="medical-details">
+                <li><strong>Mammography:</strong> Standard imaging from age 40 for average risk</li>
+                <li><strong>MRI Screening:</strong> Enhanced sensitivity for BRCA+ and very high-risk patients</li>
+                <li><strong>Clinical Exams:</strong> Regular physical exams by healthcare professionals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-content">
+          <h3>Prevention Strategies</h3>
+          <div class="content-highlight">
+            <svg class="highlight-icon" style="width: 32px; height: 32px; animation: shield-glow 2s infinite;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="highlight-text">
+              <strong>Prevention</strong> focuses on reducing modifiable risk factors and early detection through screening.
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-card">
+              <h4>Lifestyle Changes</h4>
+              <ul class="content-list">
+                <li><strong>Weight management:</strong> Maintain healthy BMI</li>
+                <li><strong>Exercise:</strong> 150 minutes moderate activity weekly</li>
+                <li><strong>Alcohol:</strong> Limit to 1 drink per day maximum</li>
+                <li><strong>Smoking:</strong> Avoid tobacco use</li>
+                <li><strong>Diet:</strong> Plant-based, nutrient-rich foods</li>
+              </ul>
+            </div>
+
+            <div class="content-card">
+              <h4>Medical Interventions</h4>
+              <ul class="content-list">
+                <li><strong>Screening:</strong> Regular mammograms from age 40</li>
+                <li><strong>Chemoprevention:</strong> For high-risk women</li>
+                <li><strong>Genetic testing:</strong> For those with family history</li>
+                <li><strong>Prophylactic surgery:</strong> For BRCA carriers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Prevention Resources</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/risk-and-prevention.html" target="_blank">ACS Prevention Strategies</a></li>
+            <li><a href="https://www.cdc.gov/cancer/breast/basic_info/prevention.htm" target="_blank">CDC Breast Cancer Prevention</a></li>
+            <li><a href="https://www.breastcancer.org/risk/prevention" target="_blank">Breastcancer.org Prevention</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- FAQ Tab -->
+    <div class="learn-tab-content" id="faq">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #000000; letter-spacing: -0.5px;">Frequently Asked Questions</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Expert answers to your most pressing breast cancer questions.</p>
+
+        <div class="faq-container">
+          <!-- Symptoms & Signs Category -->
+          <div class="faq-item" data-category="symptoms">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge symptoms-badge">Symptoms & Signs</div>
+                <span class="faq-question-text">What are the early signs of breast cancer?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Early signs may include a lump in the breast or underarm, changes in breast size or shape, nipple discharge, skin changes like dimpling or redness, and nipple inversion. However, many breast cancers have no symptoms when small.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 9v2m0 4v2m0-10C6.48 3 3 6.48 3 12s3.48 9 9 9 9-3.48 9-9-3.48-9-9-9z"/></svg>
+                    <strong>Important:</strong> Most breast lumps are benign, but early evaluation is crucial for peace of mind and early detection.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Regular screening becomes increasingly important after age 40, as it detects cancers before they cause symptoms.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="genetics">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge genetics-badge">Genetics & Risk</div>
+                <span class="faq-question-text">Am I at risk if there's no family history?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Yes! Approximately 85% of breast cancers occur in women with no family history. Risk factors include age, genetics, lifestyle factors, and reproductive history.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Key Fact:</strong> You don't need a family history to develop breast cancer. Sporadic cases are actually more common than hereditary ones.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Individual risk assessment should consider personal factors like age, hormonal exposure, and lifestyle choices, not just family history.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="genetics">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge genetics-badge">Genetics & Risk</div>
+                <span class="faq-question-text">Is breast cancer always hereditary?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> No. Only 5-10% of breast cancers are hereditary, caused by inherited mutations like BRCA1 and BRCA2. Most are sporadic, developing from acquired mutations during a person's lifetime.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    <strong>Statistics:</strong> 90-95% of breast cancers are NON-hereditary and occur randomly.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Genetic testing is recommended for those with significant family history or specific cancer profiles, not as routine screening.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="screening">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge screening-badge">Screening & Detection</div>
+                <span class="faq-question-text">What's the difference between screening and diagnostic mammograms?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Screening mammograms are routine X-rays for women with no symptoms to detect breast cancer early. Diagnostic mammograms are more detailed exams ordered when there are symptoms or abnormalities.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <strong>Comparison:</strong> Diagnostic exams often include additional views and may use ultrasound or MRI for enhanced sensitivity.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Modern AI-assisted mammography is improving detection accuracy and reducing false positives in screening programs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">What does "triple-negative" breast cancer mean?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Triple-negative means cancer cells lack estrogen/progesterone receptors and don't make too much HER2 protein. This accounts for 10-15% of breast cancers and tends to be more aggressive.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <strong>Treatment Note:</strong> Responds well to chemotherapy, surgery, and radiation rather than hormone or HER2-targeted therapies.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> New immunotherapy options are emerging for triple-negative breast cancer, offering additional treatment avenues.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge prevention-badge">Prevention</div>
+                <span class="faq-question-text">Can breast cancer be prevented?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> While not all breast cancers can be prevented, you can reduce risk through lifestyle choices: maintaining healthy weight, regular exercise, limiting alcohol, avoiding smoking, breastfeeding, and screening.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Options Available:</strong> Chemoprevention medications (Tamoxifen/Raloxifene) may be recommended for high-risk women.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Risk reduction through lifestyle modification can reduce breast cancer incidence by 10-20% on average.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="symptoms">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge symptoms-badge">Symptoms & Signs</div>
+                <span class="faq-question-text">What should I do if I find a lump?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Don't panic—most lumps are benign. Schedule an appointment promptly. Your healthcare provider may recommend clinical exam, imaging (mammogram/ultrasound), or biopsy if needed.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 12l2 2 4-4m0 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Action Steps:</strong> Early evaluation is important for peace of mind and early detection. Document when you first noticed the lump.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Advanced imaging technologies can help differentiate benign from malignant lesions, reducing unnecessary biopsies.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="symptoms">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge symptoms-badge">Symptoms & Signs</div>
+                <span class="faq-question-text">Can men get breast cancer?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Yes. About 1 in 833 men will be diagnosed in their lifetime. Risk factors include age, family history, genetic mutations, liver disease, and excess estrogen exposure.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <strong>Important Note:</strong> Male breast cancer often diagnosed at later stage due to lower awareness. Treatment is similar to women's but requires different considerations.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Increasing awareness and routine cancer prevention education in men can improve early detection rates.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Screening Questions -->
+          <div class="faq-item" data-category="screening">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge screening-badge">Screening & Detection</div>
+                <span class="faq-question-text">What is breast density and why does it matter?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Breast density refers to the proportion of fibrous and glandular tissue to fat in the breast. Dense breast tissue appears white on mammograms, which can make it harder to spot cancers and increases cancer risk.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <strong>Screening Adjustment:</strong> Women with dense breast tissue may benefit from supplemental screening with ultrasound or MRI.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Many states have "Breast Density Notification" laws requiring radiologists to inform patients of their density level.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="screening">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge screening-badge">Screening & Detection</div>
+                <span class="faq-question-text">What does a mammogram show versus an ultrasound?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Mammograms use X-rays to detect calcifications, masses, and architectural distortions. Ultrasound uses sound waves to determine if a mass is solid or fluid-filled, helping differentiate between cysts and tumors.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <strong>Complementary Use:</strong> They're often used together – mammography for initial screening and ultrasound for further evaluation.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> 3D mammography (tomosynthesis) offers better cancer visualization compared to traditional 2D mammography.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment & Recovery -->
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">What's the difference between lumpectomy and mastectomy?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Lumpectomy removes the tumor and surrounding tissue while preserving the breast. Mastectomy removes the entire breast. Choice depends on tumor size, location, stage, and patient preference.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Outcomes:</strong> Lumpectomy typically requires radiation therapy. Both options offer similar survival rates for appropriate candidates.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Breast reconstruction options are available after mastectomy, offering psychological and physical benefits to many patients.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">What is neoadjuvant therapy?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Neoadjuvant therapy is chemotherapy, hormone therapy, or targeted therapy given BEFORE surgery to shrink the tumor, making it easier to remove while preserving tissue and assessing treatment response.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <strong>Benefits:</strong> May allow breast-conservation therapy in patients who otherwise would require mastectomy.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Pathologic complete response to neoadjuvant therapy is an important prognostic indicator for long-term outcome.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Genetics & Risk -->
+          <div class="faq-item" data-category="genetics">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge genetics-badge">Genetics & Risk</div>
+                <span class="faq-question-text">Should I get genetic testing for BRCA mutations?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Genetic testing is recommended for those with: personal history of breast cancer diagnosis under 45, triple-negative breast cancer, ovarian cancer, male breast cancer, Ashkenazi Jewish ancestry, or strong family history of cancer.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    <strong>Important:</strong> Positive results require genetic counseling and may guide prevention strategies like enhanced screening or prophylactic surgery.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Genetic counselors help interpret results and discuss implications for you and family members.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="genetics">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge genetics-badge">Genetics & Risk</div>
+                <span class="faq-question-text">What are modifiable risk factors I can control?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Modifiable factors include: maintaining healthy weight, regular physical activity (150 min/week), limiting alcohol, avoiding smoking, breastfeeding if possible, limiting hormone replacement therapy, and eating a balanced diet rich in vegetables and fruits.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Impact:</strong> Lifestyle modifications can reduce breast cancer risk by 10-20%.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Regular exercise and maintaining healthy weight are among the most effective modifiable risk reduction strategies.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recovery & Support -->
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">What side effects should I expect from breast cancer treatment?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Side effects vary by treatment type: Surgery causes temporary pain/swelling and risk of lymphedema. Chemotherapy may cause fatigue, hair loss, nausea. Radiation causes skin irritation. Hormone therapy risks include hot flashes and bone loss.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 9v2m0 4v2m0-10C6.48 3 3 6.48 3 12s3.48 9 9 9 9-3.48 9-9-3.48-9-9-9z"/></svg>
+                    <strong>Management:</strong> Many side effects can be managed with medications, therapy, support groups, and lifestyle modifications.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Discussing potential side effects and management strategies with your oncology team before treatment begins is crucial for preparation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surveillance & Recurrence -->
+          <div class="faq-item" data-category="symptoms">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge symptoms-badge">Symptoms & Signs</div>
+                <span class="faq-question-text">What is recurrence and how is it monitored?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Recurrence is cancer that returns after treatment. Local recurrence is in the breast/chest wall; regional is in lymph nodes; metastatic is spread to distant organs. Monitoring involves regular clinical exams, mammograms, and watching for new symptoms.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <strong>Surveillance Schedule:</strong> Follow-up exams typically occur every 3-6 months for the first 2 years, then annually.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> New treatments targeting metastatic disease have significantly improved outcomes for patients with recurrent cancer.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lifestyle & Fertility -->
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">Can I get pregnant after breast cancer treatment?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Yes, many breast cancer survivors have successful pregnancies. However, timing is important: typically waiting 2-5 years post-treatment and discussing plans with your oncologist to ensure treatment is complete and stable.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M14 4v6m0 0v6m-7-10v10a1 1 0 001 1h12a1 1 0 001-1V5a1 1 0 00-1-1H8a1 1 0 00-1 1z"/></svg>
+                    <strong>Important:</strong> Some hormone therapies should be discontinued before attempting pregnancy. Discuss fertility preservation options before treatment.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Genetic counseling before pregnancy is advised if you have BRCA mutations, as your children have 50% risk of inheriting the mutation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Trials & Research -->
+          <div class="faq-item" data-category="treatment">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge treatment-badge">Treatment</div>
+                <span class="faq-question-text">What are clinical trials and should I consider enrolling?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Clinical trials are research studies testing new treatments. Benefits include access to cutting-edge therapies. Risks include potential side effects of unproven treatments. Decision should involve careful review of trial protocol and discussion with your oncology team.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Finding Trials:</strong> Visit ClinicalTrials.gov to search for trials matching your diagnosis, location, and stage.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Many patients with advanced or treatment-resistant cancers have benefited from novel therapies discovered through clinical trials.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mental Health & Support -->
+          <div class="faq-item" data-category="symptoms">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge symptoms-badge">Symptoms & Signs</div>
+                <span class="faq-question-text">How do I cope with the emotional impact of breast cancer?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Emotional challenges are normal. Helpful strategies include: joining support groups (in-person or online), speaking with mental health professionals, connecting with other survivors, maintaining hobbies, and staying physically active when possible.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 4.354a4 4 0 110 5.292M15 12H9m6 0a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <strong>Resources Available:</strong> Your hospital likely has social workers, psychiatrists, and support group coordinators to help.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> "Cancer-related fatigue" is a common psychological symptom. Addressing it through counseling and gradual physical activity is often beneficial.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="screening">
+            <div class="faq-question">
+              <div class="faq-header">
+                <div class="faq-category-badge screening-badge">Screening & Detection</div>
+                <span class="faq-question-text">At what age should I start breast cancer screening?</span>
+              </div>
+              <div class="faq-icon-trigger">
+                <span class="faq-icon">+</span>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>Expert Answer:</strong> Guidelines vary by organization: Average-risk women should have the option to start mammography at 40-45 and screening every 1-2 years. High-risk women may start earlier (30s) and may need MRI in addition to mammography.</p>
+                <div class="faq-key-points">
+                  <div class="key-point">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <strong>Individualization:</strong> Discuss your personal and family risk with your doctor to determine best screening age and method for you.
+                  </div>
+                </div>
+                <p><strong>Expert Insight:</strong> Shared decision-making between you and your physician is essential, weighing benefits of early detection against risks of false positives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Additional FAQ Resources</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer.html" target="_blank">ACS Breast Cancer Overview</a></li>
+            <li><a href="https://www.breastcancer.org/questions" target="_blank">Breastcancer.org Questions & Answers</a></li>
+            <li><a href="https://www.cdc.gov/cancer/breast/index.htm" target="_blank">CDC Breast Cancer Information</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')">Next</button>
+      </div>
+    </div>
+
+    <!-- Risk Assessment Tab -->
+    <div class="learn-tab-content" id="assessment">
+      <div class="learn-article">
+        <h2 style="font-size: 2.2rem; font-weight: 600; color: #0066cc; letter-spacing: -0.5px;">Breast Cancer Risk Assessment</h2>
+        <p style="font-size: 1.1rem;">This interactive tool helps you understand your breast cancer risk factors. Remember, this is for educational purposes only and not a substitute for professional medical advice.</p>
+
+        <div class="risk-assessment">
+          <div class="assessment-intro">
+            <h3>Understanding Your Risk</h3>
+            <p>Breast cancer risk is influenced by many factors. This assessment considers key risk factors to provide general information about your risk level.</p>
+          </div>
+
+          <div class="assessment-questions">
+            <div class="question-group">
+              <h4>Age</h4>
+              <div class="question-options">
+                <label class="option-radio">
+                  <input type="radio" name="age" value="under40">
+                  <span>Under 40</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="age" value="40-49">
+                  <span>40-49</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="age" value="50-59">
+                  <span>50-59</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="age" value="60plus">
+                  <span>60+</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-group">
+              <h4>Family History</h4>
+              <div class="question-options">
+                <label class="option-radio">
+                  <input type="radio" name="family" value="none">
+                  <span>No breast cancer in family</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="family" value="distant">
+                  <span>Distant relative (aunt, cousin)</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="family" value="close">
+                  <span>Close relative (mother, sister)</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="family" value="multiple">
+                  <span>Multiple close relatives</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-group">
+              <h4>Personal History</h4>
+              <div class="question-options">
+                <label class="option-radio">
+                  <input type="radio" name="personal" value="none">
+                  <span>No previous breast problems</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="personal" value="benign">
+                  <span>History of benign breast disease</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="personal" value="atypical">
+                  <span>Atypical hyperplasia</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="personal" value="previous">
+                  <span>Previous breast cancer</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-group">
+              <h4>Lifestyle Factors</h4>
+              <div class="question-options">
+                <label class="option-radio">
+                  <input type="radio" name="lifestyle" value="excellent">
+                  <span>Healthy weight, regular exercise, no alcohol/smoking</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="lifestyle" value="good">
+                  <span>Mostly healthy habits</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="lifestyle" value="fair">
+                  <span>Some unhealthy habits</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="lifestyle" value="poor">
+                  <span>Multiple risk factors (obesity, smoking, heavy drinking)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="question-group">
+              <h4>Reproductive History</h4>
+              <div class="question-options">
+                <label class="option-radio">
+                  <input type="radio" name="reproductive" value="optimal">
+                  <span>First pregnancy before 30, breastfed</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="reproductive" value="good">
+                  <span>First pregnancy 30-35, some breastfeeding</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="reproductive" value="fair">
+                  <span>Late first pregnancy or no children</span>
+                </label>
+                <label class="option-radio">
+                  <input type="radio" name="reproductive" value="high">
+                  <span>Early menarche, late menopause, no breastfeeding</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="assessment-actions">
+            <button class="btn-primary" onclick="calculateRisk()">Calculate Risk Assessment</button>
+            <button class="btn-secondary" onclick="resetAssessment()">Reset</button>
+          </div>
+
+          <div class="assessment-result" id="assessmentResult" style="display: none;">
+            <h3>Your Risk Assessment</h3>
+            <div class="risk-level">
+              <div class="risk-indicator" id="riskIndicator"></div>
+              <div class="risk-description" id="riskDescription"></div>
+            </div>
+            <div class="assessment-recommendations" id="assessmentRecommendations"></div>
+          </div>
+        </div>
+
+        <div class="assessment-disclaimer">
+          <h3>Important Disclaimer</h3>
+          <p>This assessment is for educational purposes only and provides general information. It is not a medical diagnosis or substitute for professional medical advice. Individual risk can only be properly assessed by a healthcare provider using comprehensive medical evaluation and genetic testing if appropriate.</p>
+        </div>
+
+        <div class="learn-resources">
+          <h3>Professional Risk Assessment</h3>
+          <ul class="resource-links">
+            <li><a href="https://www.cancer.gov/bcrisktool/" target="_blank">NCI Breast Cancer Risk Assessment Tool</a></li>
+            <li><a href="https://www.cancer.org/cancer/types/breast-cancer/risk-and-prevention.html" target="_blank">ACS Risk Factors & Prevention</a></li>
+            <li><a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening" target="_blank">USPSTF Screening Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="nav-btn prev-btn" onclick="navigateTabs('prev')">Previous</button>
+        <button class="nav-btn next-btn" onclick="navigateTabs('next')" disabled>Next</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- End Learning Content Section -->
+
+<script>
+  // Modern Tab Switching with Smooth Animations
+  function switchTab(event, tabName) {
+    event.preventDefault();
+    
+    // Hide all tab contents
+    const contents = document.querySelectorAll('.learn-tab-content');
+    contents.forEach(content => {
+      content.classList.remove('active');
+    });
+    
+    // Remove active state from all buttons
+    const buttons = document.querySelectorAll('.learn-tab-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    const selectedContent = document.getElementById(tabName);
+    if (selectedContent) {
+      selectedContent.classList.add('active');
+    }
+    
+    // Highlight selected button
+    const selectedBtn = event.target.closest('.learn-tab-btn');
+    selectedBtn.classList.add('active');
+    
+    // Scroll button into view in the slider
+    const tabsContainer = document.querySelector('.learn-tab-buttons');
+    if (tabsContainer && selectedBtn) {
+      const buttonRect = selectedBtn.getBoundingClientRect();
+      const containerRect = tabsContainer.getBoundingClientRect();
+      
+      // Check if button is outside visible area
+      if (buttonRect.left < containerRect.left) {
+        // Button is to the left, scroll left
+        tabsContainer.scrollBy({
+          left: buttonRect.left - containerRect.left - 40,
+          behavior: 'smooth'
+        });
+      } else if (buttonRect.right > containerRect.right) {
+        // Button is to the right, scroll right
+        tabsContainer.scrollBy({
+          left: buttonRect.right - containerRect.right + 40,
+          behavior: 'smooth'
+        });
+      }
+    }
+    
+    // Smooth scroll to tab content (optional)
+    setTimeout(() => {
+      selectedContent?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // Function for sidebar navigation
+  function switchLearnTab(event, tabName) {
+    event.preventDefault();
+    
+    // Hide all tab contents
+    const contents = document.querySelectorAll('.learn-tab-content');
+    contents.forEach(content => {
+      content.classList.remove('active');
+    });
+    
+    // Remove active state from all nav items
+    const navItems = document.querySelectorAll('.learn-nav-item');
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      item.style.background = 'none';
+      item.style.borderLeft = '3px solid transparent';
+      item.style.color = '#666';
+      item.style.fontWeight = '600';
+    });
+    
+    // Show selected tab content
+    const selectedContent = document.getElementById(tabName);
+    if (selectedContent) {
+      selectedContent.classList.add('active');
+    }
+    
+    // Highlight selected nav item
+    const selectedBtn = event.target.closest('.learn-nav-item');
+    if (selectedBtn) {
+      selectedBtn.classList.add('active');
+      selectedBtn.style.background = 'linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(0,128,255,0.08) 100%)';
+      selectedBtn.style.borderLeftColor = '#0066cc';
+      selectedBtn.style.color = '#0066cc';
+      selectedBtn.style.fontWeight = '700';
+    }
+    
+    // Smooth scroll to content
+    setTimeout(() => {
+      selectedContent?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  // Tab Navigation Function for Next/Previous buttons
+  function navigateTabs(direction) {
+    // Define tab order
+    const tabOrder = ['overview', 'symptoms', 'causes', 'diagnosis', 'treatment', 'survival', 'prevention', 'faq', 'assessment'];
+    
+    // Find currently active tab
+    const activeTab = document.querySelector('.learn-tab-content.active');
+    if (!activeTab) return;
+    
+    const currentTabId = activeTab.id;
+    const currentIndex = tabOrder.indexOf(currentTabId);
+    
+    // Calculate next tab index
+    let nextIndex = currentIndex;
+    if (direction === 'next' && currentIndex < tabOrder.length - 1) {
+      nextIndex = currentIndex + 1;
+    } else if (direction === 'prev' && currentIndex > 0) {
+      nextIndex = currentIndex - 1;
+    } else {
+      return; // Can't navigate beyond bounds
+    }
+    
+    // Click the corresponding tab button
+    const nextTabButton = document.querySelector(`.learn-tab-btn[data-tab="${tabOrder[nextIndex]}"]`);
+    if (nextTabButton) {
+      nextTabButton.click();
+    }
+  }
+
+  // Update nav button states after tab switch
+  document.addEventListener('click', function(event) {
+    if (event.target.closest('.learn-tab-btn')) {
+      setTimeout(updateNavButtonStates, 0);
+    }
+  });
+
+  function updateNavButtonStates() {
+    const tabOrder = ['overview', 'symptoms', 'causes', 'diagnosis', 'treatment', 'survival', 'prevention', 'faq', 'assessment'];
+    const activeTab = document.querySelector('.learn-tab-content.active');
+    if (!activeTab) return;
+    
+    const currentTabId = activeTab.id;
+    const currentIndex = tabOrder.indexOf(currentTabId);
+    
+    // Update all prev/next buttons
+    const allPrevBtns = document.querySelectorAll('.nav-btn.prev-btn');
+    const allNextBtns = document.querySelectorAll('.nav-btn.next-btn');
+    
+    allPrevBtns.forEach(btn => {
+      btn.disabled = currentIndex === 0;
+    });
+    
+    allNextBtns.forEach(btn => {
+      btn.disabled = currentIndex === tabOrder.length - 1;
+    });
+  }
+
+  // Initialize nav button states on page load
+  window.addEventListener('load', updateNavButtonStates);
+  
+  // Toggle FAQ items
+  function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('.faq-icon');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      icon.textContent = '+';
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.textContent = '−';
+    }
+  }
+  
+  // Initialize FAQ styling
+  document.querySelectorAll('.faq-answer').forEach(answer => {
+    answer.style.maxHeight = null;
+    answer.style.overflow = 'hidden';
+    answer.style.transition = 'max-height 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  });
+
+  // Initialize Risk Assessment Calculator
+  function calculateRisk() {
+    const age = document.querySelector('input[name="age"]:checked')?.value;
+    const family = document.querySelector('input[name="family"]:checked')?.value;
+    const personal = document.querySelector('input[name="personal"]:checked')?.value;
+    const lifestyle = document.querySelector('input[name="lifestyle"]:checked')?.value;
+    const reproductive = document.querySelector('input[name="reproductive"]:checked')?.value;
+
+    if (!age || !family || !personal || !lifestyle || !reproductive) {
+      alert('Please answer all questions to calculate your risk assessment.');
+      return;
+    }
+
+    // Simple risk calculation logic
+    let riskScore = 0;
+    
+    // Age scoring
+    if (age === 'under40') riskScore += 1;
+    else if (age === '40-49') riskScore += 2;
+    else if (age === '50-59') riskScore += 3;
+    else if (age === '60plus') riskScore += 4;
+    
+    // Family history scoring
+    if (family === 'none') riskScore += 0;
+    else if (family === 'distant') riskScore += 2;
+    else if (family === 'close') riskScore += 4;
+    else if (family === 'multiple') riskScore += 6;
+    
+    // Personal history scoring
+    if (personal === 'none') riskScore += 0;
+    else if (personal === 'benign') riskScore += 1;
+    else if (personal === 'atypical') riskScore += 3;
+    else if (personal === 'previous') riskScore += 5;
+    
+    // Lifestyle scoring
+    if (lifestyle === 'excellent') riskScore += 0;
+    else if (lifestyle === 'good') riskScore += 1;
+    else if (lifestyle === 'fair') riskScore += 2;
+    else if (lifestyle === 'poor') riskScore += 3;
+    
+    // Reproductive scoring
+    if (reproductive === 'optimal') riskScore += 0;
+    else if (reproductive === 'good') riskScore += 1;
+    else if (reproductive === 'fair') riskScore += 2;
+    else if (reproductive === 'high') riskScore += 3;
+
+    displayRiskResult(riskScore);
+  }
+
+  function displayRiskResult(score) {
+    const resultDiv = document.getElementById('assessmentResult');
+    const indicator = document.getElementById('riskIndicator');
+    const description = document.getElementById('riskDescription');
+    const recommendations = document.getElementById('assessmentRecommendations');
+
+    let riskLevel, riskText, riskColor, recommendedActions;
+
+    if (score <= 6) {
+      riskLevel = 'Low Risk';
+      riskText = 'Your breast cancer risk is relatively low based on the factors assessed.';
+      riskColor = '#27ae60';
+      recommendedActions = `
+        <h4 style="margin-top: 16px; font-weight: 700; color: #27ae60;">Recommended Actions:</h4>
+        <ul style="margin-left: 20px; margin-top: 12px;">
+          <li>Continue regular self-breast exams monthly</li>
+          <li>Follow routine mammography screening guidelines for your age</li>
+          <li>Maintain healthy lifestyle habits</li>
+          <li>Schedule regular check-ups with your healthcare provider</li>
+        </ul>
+      `;
+    } else if (score <= 12) {
+      riskLevel = 'Moderate Risk';
+      riskText = 'Your breast cancer risk is moderate. Regular screening and monitoring are important.';
+      riskColor = '#f39c12';
+      recommendedActions = `
+        <h4 style="margin-top: 16px; font-weight: 700; color: #f39c12;">Recommended Actions:</h4>
+        <ul style="margin-left: 20px; margin-top: 12px;">
+          <li>Perform monthly breast self-exams</li>
+          <li>Get annual or semi-annual clinical breast exams</li>
+          <li>Discuss screening schedule with your healthcare provider</li>
+          <li>Consider genetic counseling if family history is significant</li>
+          <li>Implement lifestyle modifications to reduce modifiable risk factors</li>
+        </ul>
+      `;
+    } else {
+      riskLevel = 'Elevated Risk';
+      riskText = 'Your breast cancer risk is elevated. Consult with your healthcare provider about enhanced screening.';
+      riskColor = '#e74c3c';
+      recommendedActions = `
+        <h4 style="margin-top: 16px; font-weight: 700; color: #e74c3c;">Recommended Actions:</h4>
+        <ul style="margin-left: 20px; margin-top: 12px;">
+          <li>Schedule an appointment with your healthcare provider or oncologist</li>
+          <li>Consider genetic testing if you have family history of BRCA mutations</li>
+          <li>Discuss advanced screening options (MRI, enhanced mammography)</li>
+          <li>Explore chemoprevention options if recommended</li>
+          <li>Implement comprehensive lifestyle modifications</li>
+          <li>Consider risk assessment tools like NCI's Breast Cancer Risk Tool</li>
+        </ul>
+      `;
+    }
+
+    indicator.style.background = `linear-gradient(135deg, ${riskColor} 0%, ${riskColor}dd 100%)`;
+    indicator.style.padding = '24px';
+    indicator.style.borderRadius = '12px';
+    indicator.style.color = 'white';
+    indicator.style.fontWeight = '700';
+    indicator.style.fontSize = '1.3rem';
+    indicator.style.textAlign = 'center';
+    indicator.style.boxShadow = `0 8px 24px ${riskColor}40`;
+    indicator.innerHTML = riskLevel;
+
+    description.innerHTML = `<p style="color: #666; line-height: 1.7;">${riskText}</p>`;
+    recommendations.innerHTML = recommendedActions;
+
+    resultDiv.style.display = 'block';
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetAssessment() {
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.checked = false;
+    });
+    document.getElementById('assessmentResult').style.display = 'none';
+  }
+
+  // Carousel Scroll Function
+  function scrollCarousel(carouselId, direction) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const scrollAmount = 300; // Pixels to scroll
+    const currentScroll = carousel.scrollLeft;
+    const targetScroll = direction > 0 
+      ? currentScroll + scrollAmount 
+      : currentScroll - scrollAmount;
+    
+    carousel.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
+  }
+
+  // Image Zoom Functions
+  function enlargeImage(button) {
+    const wrapper = button.closest('.anatomy-image-wrapper');
+    const image = wrapper.querySelector('.anatomy-image');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    if (image && image.src) {
+      modalImage.src = image.src;
+      modal.classList.add('show');
+    }
+  }
+
+  function closeImageModal(event) {
+    const modal = document.getElementById('imageModal');
+    
+    // Close if clicking on modal background or close button
+    if (event && event.target === modal) {
+      modal.classList.remove('show');
+    } else if (!event) {
+      // Close button clicked directly
+      modal.classList.remove('show');
+    }
+  }
+
+  // Close modal with ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const modal = document.getElementById('imageModal');
+      if (modal && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+      }
+    }
+  });
+</script>
+
+{% endblock %}

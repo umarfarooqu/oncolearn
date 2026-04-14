@@ -1,0 +1,30 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0080ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D81B60;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#logoBg)" opacity="0.15" stroke="url(#logoBg)" stroke-width="2"/>
+  
+  <!-- Main ribbon shape (breast cancer awareness) -->
+  <path d="M 40 50 Q 60 35 80 50 Q 75 60 60 65 Q 45 60 40 50 Z" fill="url(#logoAccent)" opacity="0.9"/>
+  <path d="M 40 70 Q 60 85 80 70 Q 75 80 60 85 Q 45 80 40 70 Z" fill="url(#logoAccent)" opacity="0.7"/>
+  
+  <!-- Center medical cross (healing) -->
+  <rect x="55" y="50" width="10" height="40" fill="url(#logoBg)" opacity="0.8" rx="2"/>
+  <rect x="40" y="65" width="40" height="10" fill="url(#logoBg)" opacity="0.8" rx="2"/>
+  
+  <!-- DNA helix accent -->
+  <path d="M 50 55 Q 60 50 70 55" stroke="url(#logoBg)" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 50 75 Q 60 80 70 75" stroke="url(#logoBg)" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+  
+  <!-- Glow effect -->
+  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#logoBg)" stroke-width="1.5" opacity="0.3"/>
+</svg>

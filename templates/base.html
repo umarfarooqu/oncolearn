@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}OncoLearn{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/images/Logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <style>
+    /* Additional light theme enhancements */
+    body {
+      background-color: #ffffff;
+    }
+    
+    /* Smooth transitions */
+    * {
+      transition: background-color 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <img src="/static/images/Logo.png" alt="OncoLearn Logo" class="nav-logo">
+    <span class="nav-text">OncoLearn</span>
+  </a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/learn" class="nav-link">Learn</a>
+    <a href="/prediction/breast" class="nav-link">Predict</a>
+    <a href="/awareness" class="nav-link">Awareness</a>
+  </div>
+</nav>
+
+<main class="page">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<footer class="main-footer" style="position: relative; background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 100%); border-top: 1px solid #e0e0e0;">
+  <!-- Subtle animated footer elements -->
+  <div style="position: absolute; top: 8%; left: 4%; width: 120px; height: 120px; opacity: 0.5; animation: float-dna 20s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="40" fill="none" stroke="#0066cc" stroke-width="2"/>
+      <path d="M70,100 Q100,80 130,100 Q100,120 70,100" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <div style="position: absolute; bottom: 8%; right: 5%; width: 140px; height: 140px; opacity: 0.5; animation: float-cell 22s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="50" y="50" width="100" height="100" rx="10" fill="none" stroke="#0066cc" stroke-width="2"/>
+      <line x1="100" y1="50" x2="100" y2="150" stroke="#0066cc" stroke-width="1.5" opacity="0.4"/>
+      <line x1="50" y1="100" x2="150" y2="100" stroke="#0066cc" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div style="position: relative; z-index: 2;">
+    <div class="footer-container" style="max-width: 1160px; margin: 0 auto; padding: 60px 24px 20px 24px;">
+      
+      <!-- Footer Top Section with Logo -->
+      <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 48px; margin-bottom: 50px;">
+        
+        <!-- Brand Column with Logo -->
+        <div class="footer-column" style="grid-column: 1;">
+          <div class="footer-brand" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <img src="/static/images/Logo.png" alt="OncoLearn Logo" style="width: 48px; height: 48px; display: block;">
+            <div style="font-size: 1.3rem; font-weight: 900; background: #0066cc; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Syne', sans-serif;">OncoLearn</div>
+          </div>
+          <p style="color: #666; font-size: 0.95rem; line-height: 1.8; margin: 0; max-width: 280px;">Empowering knowledge about breast cancer through education and AI-powered risk assessment. Your trusted platform for awareness and early detection.</p>
+        </div>
+
+        <!-- Product Column -->
+        <div class="footer-column">
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; margin-top: 0; letter-spacing: 0.5px;">Product</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;">
+              <a href="/prediction/breast" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Risk Assessment
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="/learn" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Learning Modules
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="/awareness" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Awareness
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="footer-column">
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; margin-top: 0; letter-spacing: 0.5px;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Documentation
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">FAQ & Help
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Support
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-column">
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; margin-top: 0; letter-spacing: 0.5px;">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">About Us
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Privacy Policy
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <a href="#" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Terms of Service
+                <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #0066cc, #FF69B4); transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Connect/Social Column -->
+        <div class="footer-column">
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; margin-top: 0; letter-spacing: 0.5px;">Connect</h4>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(0,102,204,0.08); border-radius: 8px; color: #0066cc; text-decoration: none; font-size: 1.15rem; font-weight: 700; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); border: 1px solid rgba(0,102,204,0.15);">f</a>
+            <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(0,102,204,0.08); border-radius: 8px; color: #0066cc; text-decoration: none; font-size: 1rem; font-weight: 700; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); border: 1px solid rgba(0,102,204,0.15);">𝕏</a>
+            <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(0,102,204,0.08); border-radius: 8px; color: #0066cc; text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); border: 1px solid rgba(0,102,204,0.15);">in</a>
+            <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(0,102,204,0.08); border-radius: 8px; color: #0066cc; text-decoration: none; font-size: 1rem; font-weight: 700; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); border: 1px solid rgba(0,102,204,0.15);">▶</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div style="height: 1px; background: linear-gradient(90deg, transparent, #0066cc20, transparent); margin: 40px 0;"></div>
+
+      <!-- Footer Bottom Section -->
+      <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-top: 24px; padding-bottom: 24px;">
+        <p style="color: #999; font-size: 0.9rem; margin: 0;">
+          <strong style="color: #1a1a1a;">OncoLearn&reg;</strong> | Dedicated to breast cancer education and awareness.<br>
+          <span style="font-size: 0.85rem;">&copy; 2026 OncoLearn. All rights reserved. Educational use only.</span>
+        </p>
+        <div style="display: flex; gap: 28px; font-size: 0.9rem;">
+          <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Privacy
+            <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #0066cc; transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+          </a>
+          <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Terms
+            <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #0066cc; transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+          </a>
+          <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); display: inline-block; position: relative;">Cookies
+            <span style="position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: #0066cc; transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Smooth Hover Effect for Footer Links -->
+<style>
+  footer a:hover {
+    color: #0066cc !important;
+  }
+  footer a span {
+    width: 0 !important;
+  }
+  footer a:hover span {
+    width: 100% !important;
+  }
+  footer a[style*="background: rgba(0,102,204,0.08);"]:hover {
+    background: rgba(0,102,204,0.15) !important;
+    transform: translateY(-2px) !important;
+  }
+</style>
+
+<script src="/static/js/main.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

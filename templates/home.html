@@ -1,0 +1,711 @@
+{% extends "base.html" %}
+{% block title %}OncoLearn – Breast Cancer Education & AI Prediction{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <!-- Enhanced Medical Imagery Background -->
+  <div class="hero-medical-bg">
+    <!-- DNA Helix Animation -->
+    <div class="medical-illustration illustration-dna">
+      <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="dnaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0.6" />
+          </linearGradient>
+        </defs>
+        <!-- DNA Double Helix -->
+        <path d="M50,50 Q100,30 150,50 Q100,70 50,50" stroke="url(#dnaGrad)" stroke-width="3" fill="none" opacity="0.7">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <path d="M50,70 Q100,50 150,70 Q100,90 50,70" stroke="url(#dnaGrad)" stroke-width="3" fill="none" opacity="0.7">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <!-- Base pairs -->
+        <line x1="70" y1="50" x2="70" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <line x1="100" y1="50" x2="100" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <line x1="130" y1="50" x2="130" y2="70" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+        <text x="100" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FF69B4" opacity="0.8">DNA</text>
+      </svg>
+    </div>
+
+    <!-- Breast Cancer Ribbon -->
+    <div class="medical-illustration illustration-ribbon">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFB6C1"/>
+            <stop offset="50%" style="stop-color:#FF69B4"/>
+            <stop offset="100%" style="stop-color:#FF1493"/>
+          </linearGradient>
+        </defs>
+        <!-- Ribbon loops -->
+        <path d="M60,100 Q100,60 140,100 Q100,140 60,100" fill="url(#ribbonGrad)" opacity="0.8">
+          <animateTransform attributeName="transform" type="rotate" values="0 100 100;5 100 100;-5 100 100;0 100 100" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M80,100 Q100,80 120,100 Q100,120 80,100" fill="#FFC0CB" opacity="0.6"/>
+        <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#8B1538" opacity="0.9">HOPE</text>
+      </svg>
+    </div>
+
+    <!-- Microscope Icon -->
+    <div class="medical-illustration illustration-microscope">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="microscopeGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#87CEEB"/>
+            <stop offset="100%" style="stop-color:#4682B4"/>
+          </radialGradient>
+        </defs>
+        <!-- Microscope base -->
+        <rect x="70" y="150" width="60" height="20" rx="5" fill="url(#microscopeGrad)" opacity="0.7"/>
+        <!-- Microscope arm -->
+        <rect x="95" y="80" width="10" height="70" fill="#4682B4" opacity="0.8"/>
+        <!-- Lens -->
+        <circle cx="100" cy="70" r="25" fill="#E0F6FF" stroke="#4682B4" stroke-width="3" opacity="0.8">
+          <animate attributeName="r" values="25;28;25" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="70" r="15" fill="#87CEEB" opacity="0.6"/>
+        <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#4682B4" opacity="0.8">DETECT</text>
+      </svg>
+    </div>
+
+    <!-- Cancer Cell Animation -->
+    <div class="medical-illustration illustration-cell">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="cellGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#FF6B9D"/>
+            <stop offset="100%" style="stop-color:#C44569"/>
+          </radialGradient>
+        </defs>
+        <!-- Cell membrane -->
+        <circle cx="100" cy="100" r="40" fill="none" stroke="url(#cellGrad)" stroke-width="4" opacity="0.7">
+          <animate attributeName="stroke-dasharray" values="0,251;125,126;251,0" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Nucleus -->
+        <circle cx="100" cy="100" r="15" fill="#FF1493" opacity="0.6">
+          <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <!-- DNA strands inside -->
+        <path d="M85,95 Q100,90 115,95" stroke="#FFB6C1" stroke-width="1" opacity="0.5"/>
+        <path d="M85,105 Q100,110 115,105" stroke="#FFB6C1" stroke-width="1" opacity="0.5"/>
+        <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#C44569" opacity="0.8">CELL</text>
+      </svg>
+    </div>
+
+    <!-- Medical Cross -->
+    <div class="medical-illustration illustration-cross">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="crossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#32CD32"/>
+            <stop offset="100%" style="stop-color:#228B22"/>
+          </linearGradient>
+        </defs>
+        <!-- Cross vertical -->
+        <rect x="95" y="70" width="10" height="60" fill="url(#crossGrad)" opacity="0.8" rx="2"/>
+        <!-- Cross horizontal -->
+        <rect x="80" y="95" width="40" height="10" fill="url(#crossGrad)" opacity="0.8" rx="2"/>
+        <!-- Pulse animation -->
+        <circle cx="100" cy="100" r="30" fill="none" stroke="#32CD32" stroke-width="2" opacity="0.3">
+          <animate attributeName="r" values="30;40;30" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#228B22" opacity="0.8">HEAL</text>
+      </svg>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="tag-icon">🎗️</span>
+      BREAST CANCER EDUCATION & AI PREDICTION
+      <span class="tag-pulse"></span>
+    </div>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+      Breast Cancer<br>
+      <span>Early Detection & AI-Powered Insights</span>
+    </h1>
+    <p style="font-size: 1.15rem; max-width: 580px; color: #1a1a1a;">
+      A dedicated platform for breast cancer education and risk prediction. Learn about symptoms,
+      risk factors, detection methods, and explore our advanced machine learning prediction models
+      designed to support early detection and informed decision-making.
+    </p>
+    <div class="hero-actions">
+      <a href="/prediction/breast" class="btn btn-primary">
+        <span class="btn-icon"></span>
+        Start Prediction →
+      </a>
+      <a href="/awareness" class="btn btn-primary" style="background-color: #FED9ED; border-color: #FED9ED; color: #FF69B4;" onmouseover="this.style.backgroundColor='#FDB8D0'; this.style.borderColor='#FDB8D0';" onmouseout="this.style.backgroundColor='#FED9ED'; this.style.borderColor='#FED9ED';">
+        <span class="btn-icon"></span>
+        Awareness
+      </a>
+      <a href="/learn" class="btn btn-outline">
+        <span class="btn-icon"></span>
+        Learn More
+      </a>
+    </div>
+
+    <!-- Hero Stats Preview -->
+    <div class="hero-stats-preview">
+      <div class="stat-preview-item">
+        <div class="stat-number">97%</div>
+        <div class="stat-label">AI Accuracy</div>
+      </div>
+      <div class="stat-preview-item">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Features Analyzed</div>
+      </div>
+      <div class="stat-preview-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BREAST CANCER STATS ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<div style="padding-top: 80px; padding-bottom: 80px; background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); width: 100%; position: relative;">
+  <!-- Animated Medical Background Elements -->
+  <div style="position: absolute; top: 5%; left: 3%; width: 150px; height: 150px; opacity: 0.5; animation: float-dna 8s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cellsGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#0066cc;stop-opacity:0.6"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="url(#cellsGrad1)" stroke-width="3"/>
+      <circle cx="100" cy="100" r="35" fill="none" stroke="url(#cellsGrad1)" stroke-width="2"/>
+      <circle cx="100" cy="100" r="20" fill="url(#cellsGrad1)" opacity="0.4"/>
+    </svg>
+  </div>
+  
+  <!-- Right side animated element -->
+  <div style="position: absolute; bottom: 10%; right: 5%; width: 160px; height: 160px; opacity: 0.5; animation: float-cell 7s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="medicalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0066cc;stop-opacity:0.7"/>
+          <stop offset="100%" style="stop-color:#00CEC9;stop-opacity:0.7"/>
+        </linearGradient>
+      </defs>
+      <rect x="60" y="60" width="80" height="80" rx="8" fill="none" stroke="url(#medicalGrad)" stroke-width="3"/>
+      <path d="M 100 70 L 100 130 M 80 100 L 120 100" stroke="url(#medicalGrad)" stroke-width="2.5"/>
+    </svg>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+    <h2 style="text-align: center; margin-bottom: 16px; font-size: 2.6rem; font-weight: 800; color: #000000;">Breast Cancer: Key Statistics</h2>
+    <p style="text-align: center; max-width: 720px; margin: 0 auto 56px; color: #555; line-height: 1.8; font-size: 1.05rem;">
+      Breast cancer is one of the most common cancers worldwide, but early detection and careful awareness make it one of the most treatable. These facts show why knowledge and preventive action are essential.
+    </p>
+
+    <!-- Key Metrics Grid -->
+    <div class="grid-4">
+      <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+        <div class="stat-number">2.3M</div>
+        <div class="stat-label">new breast cancer cases every year globally</div>
+      </div>
+      <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+        <div class="stat-number">685K</div>
+        <div class="stat-label">lives lost annually to breast cancer</div>
+      </div>
+      <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+        <div class="stat-number">1 in 8</div>
+        <div class="stat-label">women will face breast cancer in their lifetime</div>
+      </div>
+      <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+        <div class="stat-number">90%</div>
+        <div class="stat-label">survival rate when breast cancer is caught early</div>
+      </div>
+    </div>
+
+    <div style="display:grid; gap:24px; margin-top:56px;">
+      <div class="feature-box">
+        <h3 style="margin-bottom:12px; color:#D81B60; font-size: 1.3rem;">Early detection is the strongest advantage</h3>
+        <p style="margin:0; color:#555; line-height:1.8; font-size: 1.05rem;">Regular self-exams, annual screening, and prompt follow-up for changes can dramatically improve outcomes. OncoLearn helps you stay informed so you can act sooner.</p>
+      </div>
+      <div class="feature-box">
+        <h3 style="margin-bottom:12px; color:#D81B60; font-size: 1.3rem;">Awareness matters for everyone</h3>
+        <p style="margin:0; color:#555; line-height:1.8; font-size: 1.05rem;">Breast cancer mostly affects women, but men can also be diagnosed. This makes clear, inclusive education and easy-to-use prediction tools important for all users.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ LEARNING MODULES ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<div style="padding-top: 80px; padding-bottom: 80px; background: #ffffff; width: 100%; position: relative;">
+  <!-- Animated Biology Elements -->
+  <div style="position: absolute; top: 8%; right: 8%; width: 130px; height: 130px; opacity: 0.5; animation: float-ribbon 9s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="dnaHelix" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0066cc"/>
+          <stop offset="100%" style="stop-color:#FF69B4"/>
+        </linearGradient>
+      </defs>
+      <path d="M60,50 Q100,30 140,50 Q100,70 60,50" stroke="url(#dnaHelix)" stroke-width="3" fill="none"/>
+      <path d="M60,100 Q100,80 140,100 Q100,120 60,100" stroke="url(#dnaHelix)" stroke-width="3" fill="none"/>
+      <path d="M60,150 Q100,130 140,150 Q100,170 60,150" stroke="url(#dnaHelix)" stroke-width="3" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Left side element -->
+  <div style="position: absolute; bottom: 5%; left: 3%; width: 135px; height: 135px; opacity: 0.5; animation: float-microscope 10s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bioGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#00CEC9"/>
+          <stop offset="100%" style="stop-color:#0066cc"/>
+        </radialGradient>
+      </defs>
+      <circle cx="100" cy="60" r="35" fill="none" stroke="url(#bioGrad)" stroke-width="2.5"/>
+      <rect x="85" y="100" width="30" height="60" fill="none" stroke="url(#bioGrad)" stroke-width="2.5" rx="3"/>
+      <circle cx="100" cy="130" r="8" fill="url(#bioGrad)" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="display: inline-block; background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,128,255,0.1)); padding: 8px 16px; border-radius: 999px; margin-bottom: 16px; font-size: 0.85rem; font-weight: 600; color: #0066cc; letter-spacing: 0.5px;">BREAST CANCER EDUCATION</div>
+      <h2 style="font-size: 2.6rem; font-weight: 800; color: #1a1a1a; margin-bottom: 16px;">Comprehensive Breast Cancer Learning</h2>
+      <p style="font-size: 1.05rem; color: #555; line-height: 1.8; max-width: 720px; margin: 0 auto;">
+        Master every aspect of breast cancer from biology to treatment. Our in-depth modules cover detection, classification, risk factors, and modern therapeutic approaches.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin-top: 50px;">
+      <a href="/learn#symptoms" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Breast outline -->
+              <ellipse cx="70" cy="80" rx="35" ry="45" fill="none" stroke="#0066cc" stroke-width="3" opacity="0.8"/>
+              <ellipse cx="130" cy="80" rx="35" ry="45" fill="none" stroke="#0066cc" stroke-width="3" opacity="0.8"/>
+              <!-- Magnifying glass -->
+              <circle cx="140" cy="140" r="32" fill="none" stroke="#FF69B4" stroke-width="3"/>
+              <line x1="165" y1="165" x2="185" y2="185" stroke="#FF69B4" stroke-width="3" stroke-linecap="round"/>
+              <!-- Checkmark inside glass -->
+              <g transform="translate(140, 140)">
+                <path d="M -8 0 L 0 8 L 12 -8" stroke="#00CEC9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Symptoms & Detection</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Learn the early warning signs, self-examination techniques, and when to seek medical advice.</p>
+        </div>
+      </a>
+
+      <a href="/learn#causes" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- DNA Helix double strand -->
+              <defs>
+                <linearGradient id="dnaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0066cc"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <!-- Left strand -->
+              <path d="M 60 50 Q 80 60 100 70 Q 120 80 140 90" stroke="url(#dnaGrad1)" stroke-width="3" fill="none"/>
+              <!-- Right strand -->
+              <path d="M 60 90 Q 80 80 100 70 Q 120 60 140 50" stroke="url(#dnaGrad1)" stroke-width="3" fill="none"/>
+              <!-- Connecting base pairs -->
+              <line x1="70" y1="62" x2="130" y2="78" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+              <line x1="85" y1="68" x2="115" y2="72" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+              <line x1="100" y1="70" x2="100" y2="70" stroke="#FF69B4" stroke-width="2.5" opacity="0.8"/>
+              <line x1="115" y1="72" x2="85" y2="68" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+              <line x1="130" y1="78" x2="70" y2="62" stroke="#FF69B4" stroke-width="2" opacity="0.6"/>
+              <!-- Bottom section -->
+              <path d="M 60 110 Q 80 120 100 130 Q 120 140 140 150" stroke="url(#dnaGrad1)" stroke-width="3" fill="none"/>
+              <path d="M 60 150 Q 80 140 100 130 Q 120 120 140 110" stroke="url(#dnaGrad1)" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Molecular Biology</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Understand genetic factors, hormone receptors (ER, PR, HER2), and cellular mutation mechanisms.</p>
+        </div>
+      </a>
+
+      <a href="/learn#diagnosis" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Three stage boxes -->
+              <rect x="30" y="40" width="45" height="50" rx="4" fill="rgba(0, 102, 204, 0.2)" stroke="#0066cc" stroke-width="2.5"/>
+              <text x="52.5" y="75" text-anchor="middle" font-size="20" font-weight="bold" fill="#0066cc">I</text>
+              
+              <rect x="77.5" y="30" width="45" height="60" rx="4" fill="rgba(0, 128, 255, 0.3)" stroke="#0080ff" stroke-width="2.5"/>
+              <text x="100" y="67" text-anchor="middle" font-size="20" font-weight="bold" fill="#0080ff">II</text>
+              
+              <rect x="125" y="50" width="45" height="50" rx="4" fill="rgba(255, 105, 180, 0.2)" stroke="#FF69B4" stroke-width="2.5"/>
+              <text x="147.5" y="81" text-anchor="middle" font-size="20" font-weight="bold" fill="#FF69B4">III</text>
+              
+              <!-- Up arrow -->
+              <path d="M 100 140 L 100 160 L 85 150 M 100 160 L 115 150" stroke="#D81B60" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Staging & Classification</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Explore TNM staging system, histological types, and prognostic biomarkers in breast cancer.</p>
+        </div>
+      </a>
+
+      <a href="/learn#diagnosis" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Mammogram machine frame -->
+              <rect x="40" y="30" width="120" height="140" rx="8" fill="none" stroke="#0066cc" stroke-width="3"/>
+              <!-- Upper plate -->
+              <rect x="50" y="35" width="100" height="12" rx="2" fill="#0066cc" opacity="0.6"/>
+              <!-- Lower plate -->
+              <rect x="50" y="153" width="100" height="12" rx="2" fill="#0066cc" opacity="0.6"/>
+              <!-- Breast visualization (wavy lines representing scan) -->
+              <path d="M 60 80 Q 70 75 80 80 Q 90 85 100 80 Q 110 75 120 80 Q 130 85 140 80" stroke="#FF69B4" stroke-width="2" fill="none" opacity="0.8"/>
+              <path d="M 60 95 Q 70 90 80 95 Q 90 100 100 95 Q 110 90 120 95 Q 130 100 140 95" stroke="#FF69B4" stroke-width="2" fill="none" opacity="0.6"/>
+              <path d="M 60 110 Q 70 105 80 110 Q 90 115 100 110 Q 110 105 120 110 Q 130 115 140 110" stroke="#FF69B4" stroke-width="2" fill="none" opacity="0.5"/>
+              <!-- Scan indicator -->
+              <line x1="50" y1="70" x2="150" y2="70" stroke="#00CEC9" stroke-width="1.5" stroke-dasharray="3,3"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Diagnostic Imaging</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Deep dive into mammography, ultrasound, MRI, and biopsy techniques for accurate diagnosis.</p>
+        </div>
+      </a>
+
+      <a href="/learn#treatment" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Pill 1 -->
+              <ellipse cx="50" cy="70" rx="18" ry="28" fill="none" stroke="#0066cc" stroke-width="2.5"/>
+              <line x1="50" y1="45" x2="50" y2="95" stroke="#0066cc" stroke-width="2.5"/>
+              
+              <!-- Pill 2 -->
+              <ellipse cx="100" cy="100" rx="18" ry="28" fill="none" stroke="#FF69B4" stroke-width="2.5"/>
+              <line x1="100" y1="75" x2="100" y2="125" stroke="#FF69B4" stroke-width="2.5"/>
+              
+              <!-- Pill 3 -->
+              <ellipse cx="150" cy="70" rx="18" ry="28" fill="none" stroke="#00CEC9" stroke-width="2.5"/>
+              <line x1="150" y1="45" x2="150" y2="95" stroke="#00CEC9" stroke-width="2.5"/>
+              
+              <!-- Syringe -->
+              <g transform="translate(100, 50)">
+                <rect x="-35" y="-8" width="70" height="16" rx="8" fill="none" stroke="#D81B60" stroke-width="2"/>
+                <circle cx="35" cy="0" r="6" fill="none" stroke="#D81B60" stroke-width="2"/>
+                <line x1="40" y1="-8" x2="50" y2="-18" stroke="#D81B60" stroke-width="2"/>
+                <line x1="40" y1="8" x2="50" y2="18" stroke="#D81B60" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Treatment Options</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Surgery, radiation therapy, chemotherapy, hormone therapy, immunotherapy, and targeted drugs.</p>
+        </div>
+      </a>
+
+      <a href="/learn#survival" style="text-decoration: none; color: inherit;">
+        <div class="learning-card" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 16px 48px rgba(0,102,204,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,102,204,0.1)';">
+          <div class="learning-card-image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <!-- Chart axes -->
+              <line x1="40" y1="160" x2="160" y2="160" stroke="#0066cc" stroke-width="2.5"/>
+              <line x1="40" y1="160" x2="40" y2="30" stroke="#0066cc" stroke-width="2.5"/>
+              
+              <!-- Upward trending line (survival rate) -->
+              <polyline points="50,140 70,120 90,100 110,70 130,50 150,40" 
+                stroke="#00CEC9" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <!-- Area under curve (survival) -->
+              <polygon points="50,140 70,120 90,100 110,70 130,50 150,40 150,160 50,160" 
+                fill="#00CEC9" opacity="0.15"/>
+              
+              <!-- Positive indicator (star) -->
+              <g transform="translate(155, 35)">
+                <circle cx="0" cy="0" r="10" fill="#FF69B4" opacity="0.2" stroke="#FF69B4" stroke-width="1.5"/>
+                <path d="M 0 -6 L 2 -1 L 7 -1 L 3 3 L 5 8 L 0 4 L -5 8 L -3 3 L -7 -1 L -2 -1 Z" fill="#FF69B4"/>
+              </g>
+              
+              <!-- Data points -->
+              <circle cx="50" cy="140" r="3" fill="#0066cc"/>
+              <circle cx="90" cy="100" r="3" fill="#0066cc"/>
+              <circle cx="130" cy="50" r="3" fill="#0066cc"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #1a1a1a;">Prognosis & Survival</h3>
+          <p style="color: #666; line-height: 1.7; font-size: 0.95rem;">Understand survival rates, recurrence risks, lifestyle factors, and long-term management strategies.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<div style="padding-top: 80px; padding-bottom: 80px; background: #ffffff; width: 100%; position: relative;">
+  <!-- Animated Process Elements -->
+  <div style="position: absolute; top: 10%; left: 5%; width: 155px; height: 155px; opacity: 0.5; animation: float-dna 11s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="processGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0066cc"/>
+          <stop offset="100%" style="stop-color:#FF69B4"/>
+        </linearGradient>
+      </defs>
+      <!-- Data flow circles -->
+      <circle cx="60" cy="60" r="25" fill="none" stroke="url(#processGrad1)" stroke-width="2.5" opacity="0.7"/>
+      <circle cx="140" cy="100" r="25" fill="none" stroke="url(#processGrad1)" stroke-width="2.5" opacity="0.6"/>
+      <circle cx="100" cy="140" r="25" fill="none" stroke="url(#processGrad1)" stroke-width="2.5" opacity="0.5"/>
+      <!-- Connecting lines -->
+      <line x1="80" y1="75" x2="120" y2="95" stroke="url(#processGrad1)" stroke-width="1.5" opacity="0.4"/>
+      <line x1="120" y1="115" x2="110" y2="135" stroke="url(#processGrad1)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- Right side analytics element -->
+  <div style="position: absolute; top: 20%; right: 7%; width: 120px; height: 120px; opacity: 0.5; animation: float-cell 12s ease-in-out infinite;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="analyticsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00CEC9"/>
+          <stop offset="100%" style="stop-color:#0066cc"/>
+        </linearGradient>
+      </defs>
+      <!-- Bar chart -->
+      <rect x="40" y="120" width="25" height="60" fill="url(#analyticsGrad)" opacity="0.6" rx="2"/>
+      <rect x="75" y="90" width="25" height="90" fill="url(#analyticsGrad)" opacity="0.5" rx="2"/>
+      <rect x="110" y="60" width="25" height="120" fill="url(#analyticsGrad)" opacity="0.4" rx="2"/>
+      <rect x="145" y="40" width="25" height="140" fill="url(#analyticsGrad)" opacity="0.3" rx="2"/>
+    </svg>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="display: inline-block; background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,128,255,0.1)); padding: 8px 16px; border-radius: 999px; margin-bottom: 16px; font-size: 0.85rem; font-weight: 600; color: #0066cc; letter-spacing: 0.5px;">Process</div>
+      <h2 style="font-size: 2.6rem; font-weight: 800; color: #1a1a1a; margin-bottom: 16px;">How Prediction Works</h2>
+      <p style="font-size: 1.05rem; color: #555; line-height: 1.8; max-width: 720px; margin: 0 auto;">
+        Follow our three-step process to get accurate breast cancer risk predictions using advanced AI algorithms.
+      </p>
+    </div>
+
+    <div class="steps-grid" style="margin-top: 50px;">
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <h3>Input Data</h3>
+        </div>
+        <div class="step-description">
+          <p>Enter clinical measurements or upload a medical image (dermoscopy / MRI)</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <h3>AI Analysis</h3>
+        </div>
+        <div class="step-description">
+          <p>Deep neural networks process your input through feature extraction and advanced classification algorithms</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <h3>Risk Report</h3>
+        </div>
+        <div class="step-description">
+          <p>Receive a detailed risk score, classification, and confidence percentages instantly</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CTA SECTION ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<div style="padding-top: 80px; padding-bottom: 80px; background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); width: 100%; position: relative;">
+  <!-- Animated Health Elements -->
+  <div style="position: absolute; top: 8%; right: 10%; width: 160px; height: 160px; opacity: 0.5; animation: float-ribbon 13s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="healthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF69B4"/>
+          <stop offset="100%" style="stop-color:#0066cc"/>
+        </linearGradient>
+      </defs>
+      <!-- Heartbeat line -->
+      <polyline points="30,100 50,100 60,80 70,120 80,90 90,110 110,100 130,100 160,100" 
+        stroke="url(#healthGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Heart -->
+      <path d="M100,140 C100,140 85,155 75,155 C65,155 60,145 60,140 C60,130 100,110 100,110 C100,110 140,130 140,140 C140,145 135,155 125,155 C115,155 100,140 100,140" 
+        fill="url(#healthGrad)" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- Left side awareness element -->
+  <div style="position: absolute; bottom: 8%; left: 8%; width: 140px; height: 140px; opacity: 0.5; animation: float-dna 14s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="awarenessGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#0066cc"/>
+          <stop offset="100%" style="stop-color:#FF69B4"/>
+        </radialGradient>
+      </defs>
+      <!-- Brain/awareness icon -->
+      <ellipse cx="100" cy="70" rx="35" ry="40" fill="none" stroke="url(#awarenessGrad)" stroke-width="2.5"/>
+      <path d="M70,65 Q70,50 80,45 M130,65 Q130,50 120,45 M85,30 Q100,20 115,30" fill="none" stroke="url(#awarenessGrad)" stroke-width="2"/>
+      <circle cx="100" cy="110" r="30" fill="none" stroke="url(#awarenessGrad)" stroke-width="2" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; text-align: center; position: relative; z-index: 1;">
+    <h2 style="font-size: 2.6rem; font-weight: 800; color: #1a1a1a; margin-bottom: 16px;">Get Your Breast Cancer Risk Assessment Today</h2>
+    <p style="font-size: 1.05rem; color: #555; line-height: 1.8; max-width: 720px; margin: 0 auto 40px;">
+      Use our AI-powered prediction tool to assess risk based on cellular features. Combined with our comprehensive learning resources, empower yourself with knowledge about breast cancer prevention, detection, and treatment.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="/prediction/breast" class="btn btn-primary" style="font-size: 1rem; padding: 14px 40px;">Start Risk Assessment →</a>
+      <a href="/learn" class="btn btn-outline" style="font-size: 1rem; padding: 14px 40px;">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<!-- Enhanced Medical Imagery Background -->
+<div style="padding-top: 80px; padding-bottom: 80px; background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 100%); width: 100%; position: relative;">
+  <!-- Animated Feature Elements -->
+  <div style="position: absolute; top: 5%; left: 5%; width: 150px; height: 150px; opacity: 0.5; animation: float-cell 15s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="featureGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0066cc"/>
+          <stop offset="50%" style="stop-color:#0080ff"/>
+          <stop offset="100%" style="stop-color:#0066cc"/>
+        </linearGradient>
+      </defs>
+      <!-- Shield with checkmark -->
+      <path d="M100,30 L150,60 L150,120 Q100,160 100,160 Q100,160 50,120 L50,60 Z" fill="none" stroke="url(#featureGrad1)" stroke-width="3"/>
+      <path d="M80,95 L95,110 L125,75" stroke="url(#featureGrad1)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- Top right element -->
+  <div style="position: absolute; top: 20%; right: 7%; width: 160px; height: 160px; opacity: 0.5; animation: float-ribbon 16s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="featureGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0066cc"/>
+          <stop offset="100%" style="stop-color:#00CEC9"/>
+        </linearGradient>
+      </defs>
+      <!-- Networked nodes -->
+      <circle cx="60" cy="60" r="15" fill="url(#featureGrad2)" opacity="0.6"/>
+      <circle cx="140" cy="80" r="15" fill="url(#featureGrad2)" opacity="0.5"/>
+      <circle cx="100" cy="140" r="15" fill="url(#featureGrad2)" opacity="0.4"/>
+      <line x1="75" y1="70" x2="125" y2="90" stroke="url(#featureGrad2)" stroke-width="2" opacity="0.3"/>
+      <line x1="130" y1="95" x2="110" y2="130" stroke="url(#featureGrad2)" stroke-width="2" opacity="0.3"/>
+      <line x1="75" y1="85" x2="95" y2="130" stroke="url(#featureGrad2)" stroke-width="2" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <!-- Bottom left element -->
+  <div style="position: absolute; bottom: 5%; left: 10%; width: 140px; height: 140px; opacity: 0.5; animation: float-microscope 17s ease-in-out infinite; pointer-events: none; z-index: 1;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="featureGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00CEC9"/>
+          <stop offset="100%" style="stop-color:#0066cc"/>
+        </linearGradient>
+      </defs>
+      <!-- Light bulb for innovation -->
+      <path d="M100,40 Q85,50 85,65 L85,80 L115,80 L115,65 Q115,50 100,40 Z" fill="none" stroke="url(#featureGrad3)" stroke-width="2.5"/>
+      <ellipse cx="100" cy="100" rx="20" ry="8" fill="none" stroke="url(#featureGrad3)" stroke-width="2"/>
+      <rect x="95" y="108" width="10" height="20" fill="url(#featureGrad3)" opacity="0.5"/>
+      <circle cx="100" cy="25" r="8" fill="url(#featureGrad3)" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="display: inline-block; background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,128,255,0.1)); padding: 8px 16px; border-radius: 999px; margin-bottom: 16px; font-size: 0.85rem; font-weight: 600; color: #0066cc; letter-spacing: 0.5px;">PLATFORM FEATURES</div>
+      <h2 style="font-size: 2.6rem; font-weight: 800; color: #1a1a1a; margin-bottom: 16px;">Why Choose OncoLearn</h2>
+      <p style="font-size: 1.05rem; color: #555; line-height: 1.8; max-width: 720px; margin: 0 auto; margin-bottom: 56px;">Focused on breast cancer awareness, clear education, and practical AI-assisted risk assessment.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top: 40px;">
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/breast-cancer-focus.svg" alt="Breast Cancer Focus">
+        </div>
+        <h3>Breast Cancer Focus</h3>
+        <div class="feature-card-description">
+          <p>Built around breast cancer detection, prevention, and awareness with content and tools tailored to this mission.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/ai-powered-insights.svg" alt="AI-Powered Insights">
+        </div>
+        <h3>AI-Powered Insights</h3>
+        <div class="feature-card-description">
+          <p>Prediction tools are supported by machine learning models and explained in simple, accessible language.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/practical-learning.svg" alt="Practical Learning">
+        </div>
+        <h3>Practical Learning</h3>
+        <div class="feature-card-description">
+          <p>Clear educational modules cover symptoms, risk factors, screening, and next steps for informed decisions.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/inclusive-awareness.svg" alt="Inclusive Awareness">
+        </div>
+        <h3>Inclusive Awareness</h3>
+        <div class="feature-card-description">
+          <p>Designed for women, men, and caregivers alike: awareness, risk knowledge, and support are all part of the platform.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/safe-private.svg" alt="Safe & Private">
+        </div>
+        <h3>Safe & Private</h3>
+        <div class="feature-card-description">
+          <p>No personal data is stored by default. Inputs are used only for immediate results and remain session-based.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-image">
+          <img src="/static/images/actionable-guidance.svg" alt="Actionable Guidance">
+        </div>
+        <h3>Actionable Guidance</h3>
+        <div class="feature-card-description">
+          <p>Every result is paired with practical next steps and awareness tips, not just raw predictions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="focusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D81B60;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Breast outline -->
+  <ellipse cx="60" cy="80" rx="35" ry="45" fill="none" stroke="url(#focusGrad)" stroke-width="3" opacity="0.9"/>
+  <ellipse cx="140" cy="80" rx="35" ry="45" fill="none" stroke="url(#focusGrad)" stroke-width="3" opacity="0.9"/>
+  <!-- Heart inside -->
+  <g transform="translate(100, 100)">
+    <path d="M 0 -8 C -8 -16 -16 -16 -16 -8 C -16 0 0 16 0 16 C 0 16 16 0 16 -8 C 16 -16 8 -16 0 -8 Z" fill="url(#focusGrad)" opacity="0.8"/>
+  </g>
+  <!-- Radiating lines (energy) -->
+  <g stroke="url(#focusGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <line x1="100" y1="10" x2="100" y2="25"/>
+    <line x1="170" y1="100" x2="185" y2="100"/>
+    <line x1="30" y1="100" x2="15" y2="100"/>
+    <line x1="155" y1="155" x2="165" y2="165"/>
+  </g>
+</svg>

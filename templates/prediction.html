@@ -1,0 +1,557 @@
+{% extends "base.html" %}
+{% block title %}Predict – OncoPredict{% endblock %}
+
+{% block content %}
+
+<div style="background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); min-height: 100vh;">
+
+  <!-- Hero Section -->
+  <div class="section prediction-hero-section" style="padding-top:80px;padding-bottom:80px;background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); width: 100%; position: relative;">
+    <div style="position: absolute; top: 5%; left: 5%; width: 150px; height: 150px; opacity: 0.5; animation: float-cell 15s ease-in-out infinite; pointer-events: none; z-index: 1;">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="predGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0066cc"/>
+            <stop offset="50%" style="stop-color:#00CEC9"/>
+            <stop offset="100%" style="stop-color:#0066cc"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="50" fill="none" stroke="url(#predGrad1)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="35" fill="none" stroke="url(#predGrad1)" stroke-width="2"/>
+        <circle cx="100" cy="100" r="20" fill="url(#predGrad1)" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div style="position: absolute; top: 15%; right: 8%; width: 140px; height: 140px; opacity: 0.5; animation: float-ribbon 12s ease-in-out infinite; pointer-events: none; z-index: 1;">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="predGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0066cc"/>
+            <stop offset="100%" style="stop-color:#00CEC9"/>
+          </linearGradient>
+        </defs>
+        <rect x="60" y="60" width="80" height="80" rx="8" fill="none" stroke="url(#predGrad2)" stroke-width="3"/>
+        <path d="M 100 70 L 100 130 M 80 100 L 120 100" stroke="url(#predGrad2)" stroke-width="2.5"/>
+      </svg>
+    </div>
+
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+      <div style="text-align: center;">
+        <span class="prediction-pill" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,128,255,0.1)); color: #0066cc; border-color: rgba(0,102,204,0.2);">
+          <svg style="width: 16px; height: 16px; display: inline-block; margin-right: 6px; vertical-align: middle;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ribbonIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FF69B4"/>
+                <stop offset="100%" style="stop-color:#FF1493"/>
+              </linearGradient>
+            </defs>
+            <path d="M60,100 Q100,60 140,100 Q100,140 60,100" fill="url(#ribbonIconGrad)" opacity="0.8">
+              <animateTransform attributeName="transform" type="rotate" values="0 100 100;5 100 100;-5 100 100;0 100 100" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M80,100 Q100,80 120,100 Q100,120 80,100" fill="#FFC0CB" opacity="0.6"/>
+          </svg>
+          BREAST CANCER ANALYSIS
+        </span>
+        <h1 class="prediction-title" style="font-size: 2.8rem; font-weight: 900; color: #0066cc; letter-spacing: -0.5px; margin: 20px 0;">Breast Cancer Risk Assessment</h1>
+        <p class="prediction-copy" style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto;">
+          Enter cell nucleus measurements from fine-needle aspiration (FNA) cytology and receive an instant,
+          easy-to-understand AI-generated risk assessment. Designed for awareness and education, not medical diagnosis.
+        </p>
+
+        <div class="grid-3" style="margin-top: 48px;">
+          <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+            <div class="stat-number">10</div>
+            <div class="stat-label">feature analysis</div>
+          </div>
+          <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+            <div class="stat-number">97%</div>
+            <div class="stat-label">baseline accuracy</div>
+          </div>
+          <div class="stat-card fade-up" style="box-shadow: 0 4px 12px rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.18);">
+            <div class="stat-number">Instant</div>
+            <div class="stat-label">results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Explanation Section -->
+  <div style="padding: 80px 24px; background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 100%); position: relative;">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 2.2rem; font-weight: 900; color: black; margin-bottom: 16px; letter-spacing: -0.3px;">Understanding the 10 Features</h2>
+        <p style="font-size: 1rem; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          These measurements analyze cell nuclei from a fine needle aspirate to identify cancer patterns
+        </p>
+      </div>
+
+      <!-- Feature Tabs/Categories -->
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; padding: 0 12px;">
+        <button class="feature-tab active" data-category="size" style="padding: 12px 24px; border: 2px solid #0066cc; background: #0066cc; color: white; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,102,204,0.2); display: flex; align-items: center; gap: 8px;">
+          <svg style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="100" x2="160" y2="100" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="40" cy="100" r="6" fill="currentColor"/>
+            <circle cx="160" cy="100" r="6" fill="currentColor"/>
+            <line x1="100" y1="85" x2="100" y2="115" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Size & Scale
+        </button>
+        <button class="feature-tab" data-category="shape" style="padding: 12px 24px; border: 2px solid #0066cc; background: transparent; color: #0066cc; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+          <svg style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="100,40 160,80 140,160 60,160 40,80" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+          Shape & Contour
+        </button>
+        <button class="feature-tab" data-category="texture" style="padding: 12px 24px; border: 2px solid #0066cc; background: transparent; color: #0066cc; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+          <svg style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M60,100 Q80,80 100,85 Q120,90 140,100" fill="none" stroke="currentColor" stroke-width="2">
+              <animate attributeName="d" values="M60,100 Q80,80 100,85 Q120,90 140,100;M60,100 Q80,85 100,80 Q120,75 140,100;M60,100 Q80,80 100,85 Q120,90 140,100" dur="2s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+          Internal Structure
+        </button>
+        <button class="feature-tab" data-category="model" style="padding: 12px 24px; border: 2px solid #0066cc; background: transparent; color: #0066cc; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+          <svg style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="60" r="20" fill="none" stroke="currentColor" stroke-width="2">
+              <animate attributeName="r" values="20;23;20" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="70" cy="130" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="130" cy="130" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="90" y1="75" x2="75" y2="115" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="110" y1="75" x2="125" y2="115" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          How Model Uses Them
+        </button>
+      </div>
+
+      <!-- Feature Cards Container -->
+      <div id="feature-cards-container" style="min-height: 400px;">
+        
+        <!-- Size & Scale Category -->
+        <div class="feature-category active" data-category="size" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0066cc; box-shadow: 0 4px 16px rgba(0,102,204,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="radiusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0066cc"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="50" fill="none" stroke="url(#radiusGrad)" stroke-width="3" opacity="0.8"/>
+              <line x1="100" y1="100" x2="150" y2="100" stroke="url(#radiusGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="150" cy="100" r="4" fill="url(#radiusGrad)"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0066cc; margin-bottom: 8px;">Radius Mean (μm)</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">The average distance from the center of a cell nucleus to its outer perimeter. Malignant cells often have larger, swollen nuclei compared to healthy cells.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0080ff; box-shadow: 0 4px 16px rgba(0,102,204,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.1s; opacity: 0; animation-fill-mode: forwards;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="perimeterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0080ff"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="50" fill="none" stroke="url(#perimeterGrad)" stroke-width="3"/>
+              <path d="M150,100 A50,50 0 0,1 100,150" fill="none" stroke="url(#perimeterGrad)" stroke-width="2.5" stroke-dasharray="5,5" stroke-linecap="round">
+                <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite"/>
+              </path>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0080ff; margin-bottom: 8px;">Perimeter Mean (μm)</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">The average total distance around the outside boundary of the cell nuclei. This is another way to gauge the overall size and expansion of the cells.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #00CEC9; box-shadow: 0 4px 16px rgba(0,102,204,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.2s; opacity: 0; animation-fill-mode: forwards;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="areaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#00CEC9"/>
+                  <stop offset="100%" style="stop-color:#0080ff"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="50" fill="url(#areaGrad)" opacity="0.3"/>
+              <circle cx="100" cy="100" r="50" fill="none" stroke="url(#areaGrad)" stroke-width="2.5"/>
+              <path d="M70,70 L70,130 M100,70 L100,130 M130,70 L130,130" stroke="url(#areaGrad)" stroke-width="1.5" opacity="0.5"/>
+              <path d="M70,100 L130,100" stroke="url(#areaGrad)" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #00CEC9; margin-bottom: 8px;">Area Mean (μm²)</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">The average total surface area of the cell nuclei. A significantly larger area is a strong primary indicator of abnormal cell growth.</p>
+          </div>
+        </div>
+
+        <!-- Shape & Contour Category -->
+        <div class="feature-category" data-category="shape" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0066cc; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="smoothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0066cc"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <path d="M50,100 Q75,50 100,60 Q125,70 150,100" fill="none" stroke="url(#smoothGrad)" stroke-width="3" stroke-linecap="round">
+                <animate attributeName="d" values="M50,100 Q75,50 100,60 Q125,70 150,100;M50,100 Q75,55 100,65 Q125,75 150,100;M50,100 Q75,50 100,60 Q125,70 150,100" dur="2s" repeatCount="indefinite"/>
+              </path>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0066cc; margin-bottom: 8px;">Smoothness Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Measures the local variation in the radius lengths. It evaluates if the edge of the nucleus is smooth and even, or jagged and varying in length.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0080ff; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.1s; opacity: 0; animation-fill-mode: forwards; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="compactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0080ff"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="url(#compactGrad)" stroke-width="3"/>
+              <circle cx="100" cy="100" r="20" fill="url(#compactGrad)" opacity="0.3"/>
+              <line x1="100" y1="55" x2="100" y2="145" stroke="url(#compactGrad)" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0080ff; margin-bottom: 8px;">Compactness Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Compares the perimeter and area to determine how closely the nucleus resembles a perfect circle. Malignant cells are often irregularly shaped and less compact.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #00CEC9; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.2s; opacity: 0; animation-fill-mode: forwards; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="concavityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#00CEC9"/>
+                  <stop offset="100%" style="stop-color:#0080ff"/>
+                </linearGradient>
+              </defs>
+              <path d="M60,80 Q100,100 140,80" fill="none" stroke="url(#concavityGrad)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M60,100 Q100,130 140,100" fill="none" stroke="url(#concavityGrad)" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #00CEC9; margin-bottom: 8px;">Concavity Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Measures the severity or depth of inward curves (indentations or "valleys") on the boundary of the nucleus. Deep indentations indicate malignancy.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0066cc; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.3s; opacity: 0; animation-fill-mode: forwards; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="concavePointsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0066cc"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="url(#concavePointsGrad)" stroke-width="2.5"/>
+              <circle cx="100" cy="60" r="4" fill="url(#concavePointsGrad)"/>
+              <circle cx="130" cy="75" r="4" fill="url(#concavePointsGrad)"/>
+              <circle cx="140" cy="105" r="4" fill="url(#concavePointsGrad)"/>
+              <circle cx="130" cy="135" r="4" fill="url(#concavePointsGrad)"/>
+              <circle cx="95" cy="145" r="4" fill="url(#concavePointsGrad)"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0066cc; margin-bottom: 8px;">Concave Points Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Counts the average number of inward-curving points or indentations along the cell border. More points indicate more irregularity.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0080ff; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.4s; opacity: 0; animation-fill-mode: forwards; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="symmetryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0080ff"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <path d="M100,50 Q80,80 80,120 Q100,140 120,120 Q100,80 100,50" fill="none" stroke="url(#symmetryGrad)" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M100,50 Q120,80 120,120 Q100,140 80,120 Q100,80 100,50" fill="none" stroke="url(#symmetryGrad)" stroke-width="3" stroke-linejoin="round" opacity="0.6"/>
+              <line x1="100" y1="50" x2="100" y2="140" stroke="url(#symmetryGrad)" stroke-width="1.5" stroke-dasharray="2,4" opacity="0.5"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0080ff; margin-bottom: 8px;">Symmetry Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Evaluates how symmetrical the cell nucleus is. Healthy cells are typically highly symmetrical, while cancerous cells are often lopsided.</p>
+          </div>
+        </div>
+
+        <!-- Internal Structure Category -->
+        <div class="feature-category" data-category="texture" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0066cc; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="textureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0066cc"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="url(#textureGrad)" stroke-width="2.5"/>
+              <circle cx="75" cy="80" r="3" fill="url(#textureGrad)"/>
+              <circle cx="95" cy="75" r="2.5" fill="url(#textureGrad)"/>
+              <circle cx="115" cy="82" r="3" fill="url(#textureGrad)"/>
+              <circle cx="130" cy="100" r="2.5" fill="url(#textureGrad)"/>
+              <circle cx="85" cy="110" r="3" fill="url(#textureGrad)"/>
+              <circle cx="105" cy="120" r="2.5" fill="url(#textureGrad)"/>
+              <circle cx="125" cy="115" r="3" fill="url(#textureGrad)"/>
+              <circle cx="70" cy="120" r="2.5" fill="url(#textureGrad)"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0066cc; margin-bottom: 8px;">Texture Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">The standard deviation of grayscale values within the nucleus image. It measures variation in light and dark pixels. Rough, varied texture is a sign of abnormality.</p>
+          </div>
+          <div class="feature-card" style="padding: 28px 24px; background: white; border-radius: 12px; border-left: 4px solid #0080ff; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeUp 0.6s ease both 0.1s; opacity: 0; animation-fill-mode: forwards; cursor: pointer;">
+            <svg style="width: 40px; height: 40px; margin-bottom: 12px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fractalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0080ff"/>
+                  <stop offset="100%" style="stop-color:#00CEC9"/>
+                </linearGradient>
+              </defs>
+              <path d="M100,60 L120,80 L100,100 L120,120 L100,140" fill="none" stroke="url(#fractalGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M100,60 L80,80 L100,100 L80,120 L100,140" fill="none" stroke="url(#fractalGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="110" y1="70" x2="130" y2="70" stroke="url(#fractalGrad)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+              <line x1="110" y1="90" x2="135" y2="90" stroke="url(#fractalGrad)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+              <line x1="90" y1="70" x2="70" y2="70" stroke="url(#fractalGrad)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #0080ff; margin-bottom: 8px;">Fractal Dimension Mean</h3>
+            <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">Measures the complexity and chaos of the nucleus boundary (like a coastline approximation). Higher values indicate rougher, more jagged edges common in cancer cells.</p>
+          </div>
+        </div>
+
+        <!-- How Model Uses Them -->
+        <div class="feature-category" data-category="model" style="display: none; grid-template-columns: 1fr; gap: 24px;">
+          <div class="feature-card" style="padding: 36px; background: linear-gradient(135deg, rgba(0,102,204,0.05) 0%, rgba(0,128,255,0.05) 100%); border-radius: 12px; border: 2px solid rgba(0,102,204,0.2); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer;">
+            <div style="display: flex; gap: 24px; align-items: flex-start;">
+              <svg style="width: 60px; height: 60px; flex-shrink: 0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0066cc"/>
+                    <stop offset="100%" style="stop-color:#0080ff"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="70" r="30" fill="none" stroke="url(#brainGrad)" stroke-width="2.5"/>
+                <path d="M75,65 Q70,50 75,45" fill="none" stroke="url(#brainGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M125,65 Q130,50 125,45" fill="none" stroke="url(#brainGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M85,50 Q80,40 85,35" fill="none" stroke="url(#brainGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                <path d="M115,50 Q120,40 115,35" fill="none" stroke="url(#brainGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                <circle cx="70" cy="120" r="15" fill="none" stroke="url(#brainGrad)" stroke-width="2"/>
+                <circle cx="130" cy="120" r="15" fill="none" stroke="url(#brainGrad)" stroke-width="2"/>
+                <line x1="85" y1="95" x2="75" y2="110" stroke="url(#brainGrad)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                <line x1="115" y1="95" x2="125" y2="110" stroke="url(#brainGrad)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                <circle cx="100" cy="150" r="20" fill="none" stroke="url(#brainGrad)" stroke-width="2"/>
+                <line x1="85" y1="130" x2="100" y2="140" stroke="url(#brainGrad)" stroke-width="1.5" opacity="0.5"/>
+                <line x1="115" y1="130" x2="100" y2="140" stroke="url(#brainGrad)" stroke-width="1.5" opacity="0.5"/>
+              </svg>
+              <div>
+                <h3 style="font-size: 1.4rem; font-weight: 700; color: #0066cc; margin-bottom: 16px;">How Your RandomForestClassifier Works</h3>
+                <p style="font-size: 0.95rem; color: #333; line-height: 1.8; margin-bottom: 16px;">
+                  Your RandomForestClassifier looks at all 10 of these measurements simultaneously. While a single irregular feature (like a slightly larger radius) might not indicate cancer, the model builds a "forest" of decision trees to see how these features interact.
+                </p>
+                <p style="font-size: 0.95rem; color: #333; line-height: 1.8;">
+                  If a cell has a large area, deep concavities, high texture variation, and irregular symmetry, the model recognizes that specific combination as a high-risk pattern. By analyzing these 10 interconnected features, the model can distinguish between benign and malignant cells with remarkable accuracy (97% baseline).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Breast Cancer Prediction Form Section -->
+  <div class="pred-panel active" id="breast" style="padding: 80px 24px; background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%); display: flex; align-items: center; justify-content: center; min-height: 80vh;">
+    <div style="max-width: 1160px; margin: 0 auto; width: 100%;">
+      <div class="card">
+        <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:28px">
+          <div class="cancer-icon-wrap ci-breast" style="width:44px;height:44px;flex-shrink:0">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <defs>
+                <linearGradient id="breastIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#FF69B4"/>
+                  <stop offset="100%" style="stop-color:#FF1493"/>
+                </linearGradient>
+              </defs>
+              <path d="M60,100 Q100,60 140,100 Q100,140 60,100" fill="url(#breastIconGrad)" opacity="0.8">
+                <animateTransform attributeName="transform" type="rotate" values="0 100 100;5 100 100;-5 100 100;0 100 100" dur="3s" repeatCount="indefinite"/>
+              </path>
+              <path d="M80,100 Q100,80 120,100 Q100,120 80,100" fill="#FFC0CB" opacity="0.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:4px;font-size:1.6rem;font-weight:700">Breast Cancer Prediction</h3>
+            <p style="font-size:.85rem">
+              Enter cell nucleus measurements from fine-needle aspiration (FNA) cytology.
+              Based on the Wisconsin Breast Cancer Dataset. Model: Random Forest.
+            </p>
+          </div>
+        </div>
+
+        <form id="breast-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Radius Mean (μm)</label>
+              <input type="number" name="radius_mean" value="14.2" step="0.1" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Texture Mean</label>
+              <input type="number" name="texture_mean" value="19.5" step="0.1" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Perimeter Mean (μm)</label>
+              <input type="number" name="perimeter_mean" value="92.3" step="0.1" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Area Mean (μm²)</label>
+              <input type="number" name="area_mean" value="654" step="1" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Smoothness Mean</label>
+              <input type="number" name="smoothness_mean" value="0.096" step="0.001" min="0" max="1" required />
+            </div>
+            <div class="form-group">
+              <label>Compactness Mean</label>
+              <input type="number" name="compactness_mean" value="0.104" step="0.001" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Concavity Mean</label>
+              <input type="number" name="concavity_mean" value="0.089" step="0.001" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Concave Points Mean</label>
+              <input type="number" name="concave_points_mean" value="0.048" step="0.001" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Symmetry Mean</label>
+              <input type="number" name="symmetry_mean" value="0.181" step="0.001" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Fractal Dimension Mean</label>
+              <input type="number" name="fractal_dimension_mean" value="0.063" step="0.001" min="0" required />
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary" data-result="breast-result">
+              Run Prediction
+            </button>
+            <button type="reset" class="btn btn-outline">Reset</button>
+            <span style="font-size:.78rem;color:var(--text-muted);font-family:var(--font-mono)">
+              Model: RandomForestClassifier · 10 features
+            </span>
+          </div>
+        </form>
+
+        <div class="result-panel" id="breast-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Medical Disclaimer Section -->
+  <div style="padding: 60px 24px; background: linear-gradient(135deg, #ffffff 0%, #f5f7fb 100%);">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);font-size:.85rem;color:var(--text-dim);line-height:1.7">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <svg style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="medicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#32CD32"/>
+                <stop offset="100%" style="stop-color:#228B22"/>
+              </linearGradient>
+            </defs>
+            <rect x="95" y="40" width="10" height="120" fill="url(#medicGrad)" rx="2"/>
+            <rect x="60" y="95" width="80" height="10" fill="url(#medicGrad)" rx="2"/>
+          </svg>
+          <div>
+            <strong style="color:var(--text)">Medical Disclaimer</strong><br />
+            OncoPredict is an educational and research tool only. Predictions generated by this platform
+            do <strong>not</strong> constitute medical advice, diagnosis, or treatment recommendations.
+            Always consult a licensed physician or oncologist for any health concerns.
+            Results may be inaccurate without real trained model files. This tool has not been
+            approved by any medical regulatory body (FDA, CE, etc.).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Feature Tab Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.feature-tab');
+    const categories = document.querySelectorAll('.feature-category');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetCategory = this.dataset.category;
+
+        // Update active tab styling
+        tabs.forEach(t => {
+          t.style.background = 'transparent';
+          t.style.color = '#0066cc';
+        });
+        this.style.background = '#0066cc';
+        this.style.color = 'white';
+
+        // Show/hide categories with smooth transition
+        categories.forEach(category => {
+          if (category.dataset.category === targetCategory) {
+            category.style.display = 'grid';
+            if (targetCategory === 'model') {
+              category.style.display = 'grid';
+              category.style.gridTemplateColumns = '1fr';
+            }
+            // Trigger animation on visible cards
+            setTimeout(() => {
+              const cards = category.querySelectorAll('.feature-card');
+              cards.forEach((card, index) => {
+                card.style.opacity = '1';
+              });
+            }, 10);
+          } else {
+            category.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Add hover effects to feature cards
+    const cards = document.querySelectorAll('.feature-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px) scale(1.02)';
+        this.style.background = 'rgba(0,102,204,0.03)';
+        this.style.borderLeftWidth = '6px';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.background = 'white';
+        this.style.borderLeftWidth = '4px';
+      });
+    });
+
+    // Add CTA button style hover effects to feature tabs
+    const tabButtons = document.querySelectorAll('.feature-tab');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('mouseenter', function() {
+        if (this.style.background !== '#0066cc') {
+          this.style.background = '#0066cc';
+          this.style.color = 'white';
+          this.style.transform = 'scale(1.08)';
+          this.style.boxShadow = '0 4px 16px rgba(0,102,204,0.3)';
+        }
+      });
+      btn.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.background = 'transparent';
+          this.style.color = '#0066cc';
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+        }
+      });
+    });
+
+    // Add scale-up hover effect to form card
+    const formCard = document.querySelector('.card');
+    if (formCard) {
+      formCard.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      formCard.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.boxShadow = '0 12px 32px rgba(0,102,204,0.15)';
+      });
+      formCard.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 12px rgba(0,102,204,0.08)';
+      });
+    }
+  });
+</script>
+
+{% endblock %}

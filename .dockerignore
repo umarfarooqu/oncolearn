@@ -1,0 +1,47 @@
+# Git Files
+.git
+.gitignore
+
+# Python Cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info
+dist
+build
+.pytest_cache
+.coverage
+htmlcov
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE & Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+*.bak
+
+# OS Files
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Development
+README.md
+*.md
+LICENSE
+.git
+
+# Development Dependencies
+requirements-dev.txt
+pytest.ini
+.flake8
+.black

@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00CEC9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Brain outline -->
+  <path d="M 50 100 Q 50 60 100 50 Q 150 60 150 100 Q 150 140 100 150 Q 50 140 50 100 Z" fill="none" stroke="url(#aiGrad)" stroke-width="2.5" opacity="0.7"/>
+  <!-- Neural connections -->
+  <circle cx="100" cy="80" r="8" fill="url(#aiGrad)" opacity="0.8"/>
+  <circle cx="75" cy="105" r="6" fill="url(#aiGrad)" opacity="0.6"/>
+  <circle cx="125" cy="105" r="6" fill="url(#aiGrad)" opacity="0.6"/>
+  <circle cx="100" cy="130" r="7" fill="url(#aiGrad)" opacity="0.7"/>
+  <!-- Connection lines -->
+  <line x1="100" y1="80" x2="75" y2="105" stroke="url(#aiGrad)" stroke-width="2" opacity="0.5"/>
+  <line x1="100" y1="80" x2="125" y2="105" stroke="url(#aiGrad)" stroke-width="2" opacity="0.5"/>
+  <line x1="75" y1="105" x2="100" y2="130" stroke="url(#aiGrad)" stroke-width="2" opacity="0.5"/>
+  <line x1="125" y1="105" x2="100" y2="130" stroke="url(#aiGrad)" stroke-width="2" opacity="0.5"/>
+  <!-- Pulsing effect -->
+  <circle cx="100" cy="80" r="12" fill="none" stroke="url(#aiGrad)" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
