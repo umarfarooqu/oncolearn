@@ -5,11 +5,11 @@ services:
     build: .
     container_name: oncolearn
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       - FLASK_ENV=production
       - FLASK_DEBUG=False
-      - PORT=5000
+      - PORT=5001
       - HOST=0.0.0.0
     volumes:
       - ./models:/app/models
