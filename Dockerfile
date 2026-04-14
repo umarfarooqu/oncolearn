@@ -34,6 +34,7 @@ ENV PYTHONUNBUFFERED=1 \
 # Install runtime dependencies only
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy virtual environment from builder
@@ -53,8 +54,8 @@ RUN mkdir -p models && chown -R oncolearn:oncolearn /app
 USER oncolearn
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:5000/api/health')" || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:5001/api/health || exit 1
 
 # Expose port
 EXPOSE 5001
